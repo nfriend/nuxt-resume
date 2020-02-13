@@ -22,7 +22,8 @@
       </div>
       <div class="m-8 flex justify-center italic text-gray-700">
         <template v-if="showBuildInfo" class="m-4 flex">
-          Last deployed on {{ lastDeployed }} for commit&nbsp;
+          Last deployed on {{ deployedTimestamp }} ({{ deployedAgo }}) for
+          commit&nbsp;
           <a :href="commitLink">{{ commitSha }}</a>
         </template>
         <template v-else>Running locally</template>
@@ -43,10 +44,14 @@ export default {
     showBuildInfo() {
       return process.env.NODE_ENV === 'production';
     },
-    lastDeployed() {
-      return moment('%%%GITLAB_CI_TIMESTAMP%%%').format(
-        'Y/MM/DD \\a\\t HH:mm:ss ZZ',
-      );
+    deployedMoment() {
+      return moment('%%%GITLAB_CI_TIMESTAMP%%%');
+    },
+    deployedTimestamp() {
+      return this.deployedMoment.format('Y/MM/DD \\a\\t HH:mm:ss ZZ');
+    },
+    deployedAgo() {
+      return this.deployedMoment.fromNow();
     },
     commitLink() {
       return `%%%CI_PROJECT_URL%%%/commit/${this.commitSha}`;
