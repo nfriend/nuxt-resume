@@ -1,6 +1,6 @@
-# nuxt-resume
+# Nuxt Résumé
 
-My résumé, built with [NuxtJS](https://nuxtjs.org/guide/installation) and [TypeScript](http://www.typescriptlang.org/): https://resume.nathanfriend.io
+My résumé, built with [NuxtJS](https://nuxtjs.org/guide/installation) and [Tailwind CSS](https://tailwindcss.com/): https://resume.nathanfriend.io
 
 <a href="https://gitlab.com/nfriend/nuxt-resume/pipelines" target="_blank"><img src="https://gitlab.com/nfriend/nuxt-resume/badges/master/pipeline.svg" alt="GitLab build status"></a>
 
