@@ -17,7 +17,7 @@ test:
   script:
     - yarn run test
 
-tslint:
+lint:
   stage: test lint build
   script:
     - yarn run lint
