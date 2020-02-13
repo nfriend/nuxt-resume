@@ -6,7 +6,7 @@
         nuxt-resume
       </h1>
       <h2 class="subtitle">
-        My résumé, built with NuxtJS and TypeScript
+        My résumé, built with NuxtJS and Tailwind CSS
       </h2>
       <div class="links">
         <a href="https://nuxtjs.org/" target="_blank" class="button--green">
@@ -20,33 +20,47 @@
           GitHub
         </a>
       </div>
+      <div class="m-8 flex justify-center italic text-gray-700">
+        <template v-if="showBuildInfo" class="m-4 flex">
+          Last deployed on {{ lastDeployed }} for commit&nbsp;
+          <a :href="commitLink">{{ commitSha }}</a>
+        </template>
+        <template v-else>Running locally</template>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import moment from 'moment';
+import Logo from '~/components/Logo.vue';
 
 export default {
   components: {
-    Logo
-  }
-}
+    Logo,
+  },
+  computed: {
+    showBuildInfo() {
+      return process.env.NODE_ENV === 'production';
+    },
+    lastDeployed() {
+      return moment('%%%GITLAB_CI_TIMESTAMP%%%').format(
+        'Y/MM/DD \\a\\t HH:mm:ss ZZ',
+      );
+    },
+    commitLink() {
+      return `%%%CI_PROJECT_URL%%%/commit/${this.commitSha}`;
+    },
+    commitSha() {
+      return '%%%CI_COMMIT_SHORT_SHA%%%';
+    },
+  },
+};
 </script>
 
-<style>
-/* Sample `apply` at-rules with Tailwind CSS
+<style lang="postcss">
 .container {
   @apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 
 .title {

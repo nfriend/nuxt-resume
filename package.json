@@ -1,7 +1,7 @@
 {
   "name": "nuxt-resume",
   "version": "1.0.0",
-  "description": "My résumé, built with NuxtJS and TypeScript",
+  "description": "My résumé, built with NuxtJS and Tailwind CSS",
   "author": "Nathan Friend",
   "private": true,
   "scripts": {
@@ -15,6 +15,7 @@
     "lint:fix": "eslint --ext .js,.vue --ignore-path .gitignore . --fix"
   },
   "dependencies": {
+    "moment": "^2.24.0",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
