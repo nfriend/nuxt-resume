@@ -24,9 +24,13 @@
         <template v-if="showBuildInfo" class="m-4 flex">
           Last deployed on {{ deployedTimestamp }} ({{ deployedAgo }}) for
           commit&nbsp;
-          <a :href="commitLink">{{ commitSha }}</a>
+          <a
+            :href="commitLink"
+            class="text-blue-500 hover:text-blue-600 hover:underline"
+            >{{ commitSha }}</a
+          >
         </template>
-        <template v-else>Running locally</template>
+        <template v-if="!isProduction">Running locally</template>
       </div>
     </div>
   </div>
@@ -42,7 +46,10 @@ export default {
   },
   computed: {
     showBuildInfo() {
-      return process.env.NODE_ENV === 'production';
+      return this.isProduction && this.deployedMoment.isValid();
+    },
+    isProduction() {
+      return process.env.NODE_ENV !== 'production';
     },
     deployedMoment() {
       return moment('%%%GITLAB_CI_TIMESTAMP%%%');
