@@ -21,16 +21,17 @@
         </a>
       </div>
       <div class="m-8 flex justify-center italic text-gray-700">
-        <template v-if="showBuildInfo" class="m-4 flex">
+        <template v-if="isProduction" class="m-4 flex">
           Last deployed on {{ deployedTimestamp }} ({{ deployedAgo }}) for
           commit&nbsp;
           <a
             :href="commitLink"
             class="text-blue-500 hover:text-blue-600 hover:underline"
-            >{{ commitSha }}</a
           >
+            {{ commitSha }}
+          </a>
         </template>
-        <template v-if="!isProduction">Running locally</template>
+        <template v-else>Running locally</template>
       </div>
     </div>
   </div>
@@ -45,14 +46,11 @@ export default {
     Logo,
   },
   computed: {
-    showBuildInfo() {
-      return this.isProduction && this.deployedMoment.isValid();
-    },
     isProduction() {
-      return process.env.NODE_ENV !== 'production';
+      return process.env.isProduction;
     },
     deployedMoment() {
-      return moment('%%%GITLAB_CI_TIMESTAMP%%%');
+      return moment(process.env.gitlabCi.timestamp);
     },
     deployedTimestamp() {
       return this.deployedMoment.format('Y/MM/DD \\a\\t HH:mm:ss ZZ');
@@ -61,10 +59,10 @@ export default {
       return this.deployedMoment.fromNow();
     },
     commitLink() {
-      return `%%%CI_PROJECT_URL%%%/commit/${this.commitSha}`;
+      return `${process.env.gitlabCi.projectUrl}/commit/${this.commitSha}`;
     },
     commitSha() {
-      return '%%%CI_COMMIT_SHORT_SHA%%%';
+      return process.env.gitlabCi.commitSha;
     },
   },
 };

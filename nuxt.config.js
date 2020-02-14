@@ -51,6 +51,11 @@ export default {
     extend(config, ctx) {},
   },
   env: {
-    NODE_ENV: process.env.NODE_ENV,
+    isProduction: Boolean(process.env.CI),
+    gitlabCi: {
+      timestamp: new Date().toISOString(),
+      projectUrl: process.env.CI_PROJECT_URL,
+      commitSha: process.env.CI_COMMIT_SHORT_SHA,
+    },
   },
 };
