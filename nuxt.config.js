@@ -18,7 +18,7 @@ export default {
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css?family=Quicksand:300&display=swap',
+          'https://fonts.googleapis.com/css?family=Bitter:400,400i,700&display=swap',
       },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ],

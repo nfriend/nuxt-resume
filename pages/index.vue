@@ -16,3 +16,9 @@ export default {
   },
 };
 </script>
+
+<style>
+body {
+  font-family: 'Bitter', serif;
+}
+</style>
