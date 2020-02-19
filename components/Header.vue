@@ -1,5 +1,5 @@
 <template>
-  <h1 class="font-light text-teal-800">
+  <h1 class="font-light text-teal-800 tracking-tighter">
     <Kerned :letters="title" />
   </h1>
 </template>
