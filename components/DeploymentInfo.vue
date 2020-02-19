@@ -16,19 +16,18 @@
 <script>
 import moment from 'moment';
 
+const deployedMoment = moment(process.env.gitlabCi.timestamp);
+
 export default {
   computed: {
     isProduction() {
       return process.env.isProduction;
     },
-    deployedMoment() {
-      return moment(process.env.gitlabCi.timestamp);
-    },
     deployedTimestamp() {
-      return this.deployedMoment.format('Y/MM/DD \\a\\t HH:mm:ss ZZ');
+      return deployedMoment.format('Y/MM/DD \\a\\t HH:mm:ss ZZ');
     },
     deployedAgo() {
-      return this.deployedMoment.fromNow();
+      return deployedMoment.fromNow();
     },
     commitLink() {
       return `${process.env.gitlabCi.projectUrl}/commit/${this.commitSha}`;
