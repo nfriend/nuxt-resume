@@ -1,5 +1,5 @@
 export const resumeData = {
-  titleLetters: [
+  title: [
     { character: 'N', letterSpacing: '-.6rem' },
     { character: 'a', letterSpacing: '-.6rem' },
     { character: 't', letterSpacing: '-.1rem' },

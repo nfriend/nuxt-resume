@@ -1,35 +1,18 @@
 <template>
   <h1 class="font-light text-teal-800">
-    <span
-      v-for="(letter, index) in titleLetters"
-      :key="index"
-      :style="{ letterSpacing: letter.letterSpacing }"
-      >{{ letter.character }}</span
-    >
+    <Kerned :letters="title" />
   </h1>
 </template>
 
 <script>
-import { isObject, isString } from 'lodash';
 import { resumeData } from '../resume-data';
+import Kerned from './Kerned';
 
 export default {
+  components: { Kerned },
   computed: {
-    titleLetters() {
-      return resumeData.titleLetters.reduce((accumulator, current) => {
-        if (isObject(current)) {
-          accumulator.push(current);
-        } else if (isString(current)) {
-          for (const c of current) {
-            accumulator.push({
-              character: c,
-              letterSpacing: '',
-            });
-          }
-        }
-
-        return accumulator;
-      }, []);
+    title() {
+      return resumeData.title;
     },
   },
 };
