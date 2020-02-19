@@ -5,7 +5,23 @@
  ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
  */
 module.exports = {
-  theme: {},
+  theme: {
+    extend: {
+      colors: {
+        ivory: '#fffffd',
+      },
+      fontFamily: {
+        serif: [
+          'Bitter',
+          'Georgia',
+          'Cambria',
+          '"Times New Roman"',
+          'Times',
+          'serif',
+        ],
+      },
+    },
+  },
   variants: {},
   plugins: [],
 };

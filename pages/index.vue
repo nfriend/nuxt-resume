@@ -1,6 +1,6 @@
 <template>
   <div
-    class="container min-h-screen flex flex-col mx-auto shadow-2xl p-20 m-20 bg-white"
+    class="container font-serif min-h-screen flex flex-col mx-auto shadow-2xl p-20 m-20 bg-ivory"
   >
     <Header />
     <UnderConstructionMessage class="pb-4" />
@@ -21,11 +21,3 @@ export default {
   },
 };
 </script>
-
-<style lang="postcss">
-body,
-html {
-  font-family: 'Bitter', serif;
-  @apply bg-gray-200;
-}
-</style>
