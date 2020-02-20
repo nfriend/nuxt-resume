@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="page font-serif flex flex-col p-20 my-20 print:my-0 mx-auto shadow-2xl print:shadow-none bg-ivory print:bg-transparent"
-  >
+  <div class="paper-page">
     <Header />
     <UnderConstructionMessage />
     <LoremIpsum />

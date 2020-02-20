@@ -6,6 +6,15 @@
  */
 module.exports = {
   theme: {
+    screens: {
+      xs: '576px',
+      sm: '639px',
+      md: '767px',
+      paper: '8.5in',
+      print: {
+        raw: 'print',
+      },
+    },
     extend: {
       colors: {
         ivory: '#fffffd',
@@ -19,11 +28,6 @@ module.exports = {
           'Times',
           'serif',
         ],
-      },
-      screens: {
-        print: {
-          raw: 'print',
-        },
       },
     },
   },

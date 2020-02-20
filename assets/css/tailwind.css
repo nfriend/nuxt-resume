@@ -1,24 +1,36 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
 
-html,
-body {
-  @apply bg-gray-200;
+.w-paper {
+  width: 8.5in;
 }
 
-.page {
-  width: 8.5in;
+.h-paper {
   height: 11in;
 }
 
-@page {
-  margin: 0;
+.paper-page {
+  @apply w-paper
+         h-paper
+         flex
+         flex-col
+         p-20
+         my-20
+         mx-auto
+         shadow-2xl
+         bg-ivory;
 }
 
 @media print {
-  html,
-  body {
-    @apply bg-transparent;
+  .paper-page {
+    @apply my-0 shadow-none bg-transparent;
   }
 }
+
+@media screen and (max-width: 8.5in) {
+  .paper-page {
+    @apply w-full h-auto;
+  }
+}
+
+@tailwind utilities;
