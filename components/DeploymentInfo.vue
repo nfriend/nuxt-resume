@@ -1,11 +1,8 @@
 <template>
-  <div class="flex italic text-gray-700 print:hidden">
-    <template v-if="isProduction" class="m-4 flex">
-      Last deployed on {{ deployedTimestamp }} for commit&nbsp;<a
-        :href="commitLink"
-      >
-        {{ commitSha }}
-      </a>
+  <div class="italic text-gray-700 print:hidden">
+    <template v-if="isProduction" class="m-4">
+      Last deployed on {{ deployedTimestamp }} for commit
+      <a :href="commitLink">{{ commitSha }}</a>
     </template>
     <template v-else>Running locally</template>
   </div>
