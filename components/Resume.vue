@@ -1,14 +1,16 @@
 <template>
   <div
-    class="container font-serif min-h-screen flex flex-col mx-auto shadow-2xl p-20 m-20 bg-ivory"
+    class="page font-serif flex flex-col p-20 my-20 print:my-0 mx-auto shadow-2xl print:shadow-none bg-ivory print:bg-transparent"
   >
     <Header />
-    <UnderConstructionMessage class="pb-4" />
+    <UnderConstructionMessage />
+    <LoremIpsum />
     <DeploymentInfo />
   </div>
 </template>
 
 <script>
+import LoremIpsum from './LoremIpsum';
 import Header from '~/components/Header.vue';
 import DeploymentInfo from '~/components/DeploymentInfo.vue';
 import UnderConstructionMessage from '~/components/UnderConstructionMessage';
@@ -18,6 +20,7 @@ export default {
     Header,
     DeploymentInfo,
     UnderConstructionMessage,
+    LoremIpsum,
   },
 };
 </script>

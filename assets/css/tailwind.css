@@ -1,3 +1,24 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+html,
+body {
+  @apply bg-gray-200;
+}
+
+.page {
+  width: 210mm;
+  height: 297mm;
+}
+
+@page {
+  margin: 0;
+}
+
+@media print {
+  html,
+  body {
+    @apply bg-transparent;
+  }
+}

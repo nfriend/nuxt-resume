@@ -19,6 +19,6 @@ export default {
 </script>
 <style lang="css" scoped>
 h1 {
-  font-size: 100px;
+  font-size: 60px;
 }
 </style>

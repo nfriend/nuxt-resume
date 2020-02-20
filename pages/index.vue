@@ -9,10 +9,3 @@ export default {
   components: { Resume },
 };
 </script>
-
-<style lang="postcss">
-html,
-body {
-  @apply bg-gray-200;
-}
-</style>

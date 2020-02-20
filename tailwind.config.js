@@ -20,6 +20,11 @@ module.exports = {
           'serif',
         ],
       },
+      screens: {
+        print: {
+          raw: 'print',
+        },
+      },
     },
   },
   variants: {},

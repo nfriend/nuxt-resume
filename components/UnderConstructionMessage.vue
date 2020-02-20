@@ -1,5 +1,5 @@
 <template>
-  <div class="text-gray-700">
+  <div class="text-gray-700 pb-4">
     <p>
       <strong>This site is under construction! 🛠️</strong>
     </p>
