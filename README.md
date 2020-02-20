@@ -10,13 +10,13 @@ My résumé, built with [NuxtJS](https://nuxtjs.org/guide/installation) and
 ## Data
 
 All of the content of this resume is sourced from
-[`resume-data.json`](./resume-data.json).
+[`resume-data.js`](./resume-data.js).
 
-Additionally, a `resume-data.private.json` file can be created alongside
-[`resume-data.json`](./resume-data.json). This file it `.gitignore`-ed; its
-contents will be merged into [`resume-data.json`](./resume-data.json) when
-building this résumé. This is used to protect personal info such as phone
-numbers and addresses.
+Additionally, a `resume-data.private.js` file can be created alongside
+[`resume-data.js`](./resume-data.js). This file it `.gitignore`-ed; its contents
+will be merged into [`resume-data.js`](./resume-data.js) when building this
+résumé. This is used to protect personal info such as phone numbers and
+addresses.
 
 ## Build Setup
 
