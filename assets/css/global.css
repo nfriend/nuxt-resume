@@ -1,0 +1,60 @@
+html,
+body {
+  @apply bg-gray-200
+         font-serif
+         box-border
+         antialiased;
+
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  @apply text-blue-500;
+
+  &:hover {
+    @apply text-blue-600
+    underline;
+  }
+
+  &:active {
+    @apply text-blue-700;
+  }
+
+  &:visited {
+    @apply text-purple-500;
+
+    &:hover {
+      @apply text-purple-600;
+    }
+
+    &:active {
+      @apply text-purple-700;
+    }
+  }
+}
+
+h1 {
+  @apply text-6xl
+         font-light
+         text-teal-800
+         tracking-tighter;
+}
+
+@media screen and (max-width: 8.5in) {
+  html,
+  body {
+    @apply bg-transparent;
+  }
+}
+
+@page {
+  margin: 0;
+}
+
+@media print {
+  html,
+  body {
+    @apply bg-transparent;
+  }
+}

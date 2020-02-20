@@ -1,5 +1,5 @@
 <template>
-  <h1 class="font-light text-teal-800 tracking-tighter">
+  <h1>
     <Kerned :letters="title" />
   </h1>
 </template>
@@ -17,8 +17,3 @@ export default {
   },
 };
 </script>
-<style lang="css" scoped>
-h1 {
-  font-size: 60px;
-}
-</style>

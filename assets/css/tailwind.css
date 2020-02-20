@@ -1,36 +1,3 @@
 @tailwind base;
 @tailwind components;
-
-.w-paper {
-  width: 8.5in;
-}
-
-.h-paper {
-  height: 11in;
-}
-
-.paper-page {
-  @apply w-paper
-         h-paper
-         flex
-         flex-col
-         p-20
-         my-20
-         mx-auto
-         shadow-2xl
-         bg-ivory;
-}
-
-@media print {
-  .paper-page {
-    @apply my-0 shadow-none bg-transparent;
-  }
-}
-
-@media screen and (max-width: 8.5in) {
-  .paper-page {
-    @apply w-full h-auto;
-  }
-}
-
 @tailwind utilities;

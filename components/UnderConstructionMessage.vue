@@ -5,11 +5,7 @@
     </p>
     <p>
       In the meantime, check out the source at
-      <a
-        class="text-blue-500 hover:text-blue-600 hover:underline"
-        href="https://gitlab.com/nfriend/nuxt-resume"
-        >GitLab.</a
-      >
+      <a href="https://gitlab.com/nfriend/nuxt-resume">GitLab.</a>
     </p>
   </div>
 </template>
