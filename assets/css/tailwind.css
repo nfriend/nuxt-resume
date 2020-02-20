@@ -8,8 +8,8 @@ body {
 }
 
 .page {
-  width: 210mm;
-  height: 297mm;
+  width: 8.5in;
+  height: 11in;
 }
 
 @page {
