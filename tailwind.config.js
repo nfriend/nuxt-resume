@@ -7,9 +7,12 @@
 module.exports = {
   theme: {
     screens: {
-      xs: '576px',
-      sm: '639px',
-      md: '767px',
+      sm: '576px',
+      md: '639px',
+      lg: '767px',
+      xl: '1280px',
+      '2xl': '1440',
+      '3xl': '2160',
       paper: '8.5in',
       print: {
         raw: 'print',
@@ -28,6 +31,9 @@ module.exports = {
           'Times',
           'serif',
         ],
+      },
+      fontSize: {
+        '7xl': '5rem',
       },
     },
   },

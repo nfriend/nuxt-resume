@@ -5,6 +5,7 @@ body {
          box-border
          antialiased;
 
+  font-size: 12px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -35,10 +36,12 @@ a {
 }
 
 h1 {
-  @apply text-6xl
+  @apply text-7xl
          font-light
          text-teal-800
-         tracking-tighter;
+         tracking-tighter
+         leading-none
+         pb-4;
 }
 
 @media screen and (max-width: 8.5in) {
