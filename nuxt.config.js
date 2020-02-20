@@ -65,4 +65,8 @@ export default {
       commitSha: process.env.CI_COMMIT_SHORT_SHA,
     },
   },
+  server: {
+    port: 3000,
+    host: '0.0.0.0',
+  },
 };
