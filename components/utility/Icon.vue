@@ -50,7 +50,7 @@
     focusable="false"
     role="img"
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 384 512"
+    viewBox="0 0 390 512"
   >
     <title>Location</title>
     <path
@@ -65,7 +65,7 @@
     focusable="false"
     role="img"
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 448 512"
+    viewBox="0 0 512 512"
   >
     <title>LinkedIn</title>
     <path
