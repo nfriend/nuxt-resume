@@ -5,7 +5,7 @@
     focusable="false"
     role="img"
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 496 512"
+    viewBox="0 0 512 512"
   >
     <title>Personal website</title>
     <path
@@ -50,7 +50,7 @@
     focusable="false"
     role="img"
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 390 512"
+    viewBox="0 0 512 512"
   >
     <title>Location</title>
     <path
@@ -95,7 +95,7 @@
     focusable="false"
     role="img"
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 496 512"
+    viewBox="0 0 512 512"
   >
     <title>GitHub</title>
     <path
