@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import Kerned from '@/components/Kerned.vue';
+import Kerned from '@/components/utility/Kerned.vue';
 
 describe('Kerned', () => {
   let wrapper;
