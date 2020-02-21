@@ -60,12 +60,6 @@
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim tempora
       nostrum similique hic modi est vitae iste, consectetur eos incidunt
       voluptatibus. Numquam sed necessitatibus accusamus animi sunt doloremque
-      debitis vel?
-    </p>
-    <p class="pb-4">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim tempora
-      nostrum similique hic modi est vitae iste, consectetur eos incidunt
-      voluptatibus. Numquam sed necessitatibus accusamus animi sunt doloremque
       debitis vel? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
       Enim tempora nostrum similique hic modi est vitae iste, consectetur eos
       incidunt voluptatibus. Numquam sed necessitatibus accusamus animi sunt
