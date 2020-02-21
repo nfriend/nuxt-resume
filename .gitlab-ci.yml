@@ -2,6 +2,7 @@ image: node:latest
 
 stages:
   - test lint build
+  - pdf
   - deploy
 
 before_script:
@@ -29,6 +30,18 @@ build:
   artifacts:
     paths:
       - dist/
+
+pdf:
+  stage: pdf
+  image:
+    name: zenika/alpine-chrome:latest
+    entrypoint: [""]
+  before_script: []
+  script:
+    - ci/generate-pdf.sh
+  artifacts:
+    paths:
+      - "*.pdf"
 
 pages:
   stage: deploy
