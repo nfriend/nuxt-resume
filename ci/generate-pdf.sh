@@ -7,4 +7,4 @@ chromium-browser --headless \
                  --no-sandbox \
                  --print-to-pdf="Nathan Friend - Résumé.pdf" \
                  --hide-scrollbars \
-                 https://resume.nathanfriend.io
+                 file://$CI_PROJECT_DIR/dist/index.html
