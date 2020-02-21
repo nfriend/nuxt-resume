@@ -1,18 +1,60 @@
-import { merge } from 'lodash';
-
 // Try and get data from ./resume-data.private.js
-// If we find this file, its contents are merged
-// with the data specified below.
-// This is to avoid including personal info (i.e
-// addresses, phone numbers) in this project's repo.
+// If we find this file, its contents are used below.
+// This is to avoid including personal info (e.g.
+// phone numbers) in this project's repo.
 let privateResumeData;
 try {
-  ({ privateResumeData } = require('./resume-data.private.js'));
+  privateResumeData = require('./resume-data.private.js');
 } catch (err) {
-  privateResumeData = {};
+  /* Leave privateResumeData undefined */
 }
 
-const publicResumeData = {
+const contactInfo = [
+  {
+    type: 'email',
+    display: ' hello@nathanfriend.io',
+    link: 'mailto:hello@nathanfriend.io',
+  },
+];
+
+// If we have phone information, add it here
+if (privateResumeData?.phoneInfo) {
+  contactInfo.push(privateResumeData.phoneInfo);
+}
+
+contactInfo.push({
+  type: 'location',
+  display: 'Woodstock, ON',
+  link: 'https://goo.gl/maps/SWsAd7QpGtWYdVCE6',
+});
+
+// If we _don't_ have phone information, add LinkedIn info instead. This is
+// because the contact section looks too empty with less than 5 items.
+if (!privateResumeData?.phoneInfo) {
+  contactInfo.push({
+    type: 'linkedin',
+    display: 'nfriend',
+    link: 'https://www.linkedin.com/in/nfriend/',
+  });
+}
+
+contactInfo.push(
+  {
+    type: 'website',
+    display: 'nathanfriend.io',
+    link: 'https://nathanfriend.io',
+  },
+  {
+    type: 'gitlab+github',
+    display: 'nfriend',
+    links: {
+      gitlab: 'https://gitlab.com/nfriend',
+      github: 'https://github.com/nfriend',
+    },
+  },
+);
+
+export const resumeData = {
   title: [
     { character: 'N', letterSpacing: '-0.08em' },
     { character: 'a', letterSpacing: '-0.07em' },
@@ -28,6 +70,5 @@ const publicResumeData = {
     { character: 'n', letterSpacing: '-0.07em' },
     'd',
   ],
+  contactInfo,
 };
-
-export const resumeData = merge({}, publicResumeData, privateResumeData);

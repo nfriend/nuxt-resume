@@ -9,7 +9,7 @@
 
 <script>
 import LoremIpsum from './LoremIpsum';
-import Header from '~/components/Header.vue';
+import Header from '~/components/header/Header.vue';
 import DeploymentInfo from '~/components/DeploymentInfo.vue';
 import UnderConstructionMessage from '~/components/UnderConstructionMessage';
 
