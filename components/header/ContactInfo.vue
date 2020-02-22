@@ -1,12 +1,12 @@
 <template>
   <address
-    class="flex justify-center sm:justify-start lg:justify-between flex-wrap lg:flex-no-wrap"
+    class="flex justify-center sm:justify-start lg:justify-between print:justify-between flex-wrap lg:flex-no-wrap"
   >
     <template v-for="(item, index) in contactInfo">
       <!-- Combined GitLab/GitHub info requires some special handling -->
       <span
         v-if="item.type === 'gitlab+github'"
-        class="flex items-center whitespace-no-wrap mr-6 lg:mr-0"
+        class="flex items-center whitespace-no-wrap mr-6 lg:mr-0 print:mr-0"
       >
         <a :href="item.links.gitlab">
           <Icon type="gitlab" class="mr-1" />
@@ -22,7 +22,7 @@
       <!-- All other contact info types -->
       <template v-else>
         <a
-          class="flex items-center whitespace-no-wrap mr-6 lg:mr-0"
+          class="flex items-center whitespace-no-wrap mr-6 lg:mr-0 print:mr-0"
           :href="item.link"
         >
           <Icon :type="item.type" class="mr-1" />
@@ -33,7 +33,7 @@
       <!-- Don't append a separator to the last item  -->
       <span
         v-if="index !== contactInfo.length - 1"
-        class="text-gray-600 mx-4 hidden lg:inline"
+        class="text-gray-600 mx-4 hidden lg:inline print:inline"
       >
         /
       </span>
