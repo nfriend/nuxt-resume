@@ -97,6 +97,15 @@ export default {
       projectUrl: process.env.CI_PROJECT_URL,
       commitSha: process.env.CI_COMMIT_SHORT_SHA,
     },
+
+    // comment above and uncomment below
+    // to simulate production environment
+    // isProduction: true,
+    // gitlabCi: {
+    //   timestamp: new Date().toISOString(),
+    //   projectUrl: 'https://gitlab.com/nfriend/nuxt-resume',
+    //   commitSha: 'c6d21f92',
+    // },
   },
   server: {
     port: 3000,
