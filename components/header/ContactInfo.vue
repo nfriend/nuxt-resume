@@ -1,8 +1,13 @@
 <template>
-  <address class="flex justify-between">
+  <address
+    class="flex justify-center sm:justify-start lg:justify-between flex-wrap lg:flex-no-wrap"
+  >
     <template v-for="(item, index) in contactInfo">
       <!-- Combined GitLab/GitHub info requires some special handling -->
-      <span v-if="item.type === 'gitlab+github'" class="flex items-center">
+      <span
+        v-if="item.type === 'gitlab+github'"
+        class="flex items-center whitespace-no-wrap mr-6 lg:mr-0"
+      >
         <a :href="item.links.gitlab">
           <Icon type="gitlab" class="mr-1" />
         </a>
@@ -16,14 +21,20 @@
 
       <!-- All other contact info types -->
       <template v-else>
-        <a class="contact-item" :href="item.link">
+        <a
+          class="flex items-center whitespace-no-wrap mr-6 lg:mr-0"
+          :href="item.link"
+        >
           <Icon :type="item.type" class="mr-1" />
           {{ item.display }}
         </a>
       </template>
 
       <!-- Don't append a separator to the last item  -->
-      <span v-if="index !== contactInfo.length - 1" class="text-gray-600">
+      <span
+        v-if="index !== contactInfo.length - 1"
+        class="text-gray-600 mx-4 hidden lg:inline"
+      >
         /
       </span>
     </template>
@@ -43,9 +54,3 @@ export default {
   },
 };
 </script>
-
-<style lang="postcss">
-.contact-item {
-  @apply flex items-center;
-}
-</style>

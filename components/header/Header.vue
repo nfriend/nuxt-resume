@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="flex items-stretch sm:items-start flex-col sm:flex-row">
-      <h1 class="flex-grow flex-shrink-0">
+      <h1 class="flex-grow flex-shrink-0 text-center sm:text-left">
         <Kerned :letters="title" />
       </h1>
       <PdfLink />
