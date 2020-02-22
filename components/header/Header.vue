@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div class="flex items-start">
+    <div class="flex items-stretch sm:items-start flex-col sm:flex-row">
       <h1 class="flex-grow flex-shrink-0">
         <Kerned :letters="title" />
       </h1>
