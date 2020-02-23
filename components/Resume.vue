@@ -1,27 +1,27 @@
 <template>
-  <div class="paper-page">
+  <div class="paper-page flex flex-col">
     <Header />
-    <!-- <UnderConstructionMessage /> -->
-    <!-- <LoremIpsum /> -->
-    <PlaceholderContent />
-    <!-- <DeploymentInfo /> -->
+    <UnderConstructionMessage v-if="isProduction" />
+    <PlaceholderContent class="flex-grow" />
+    <DeploymentInfo />
   </div>
 </template>
 
 <script>
-// import LoremIpsum from './LoremIpsum';
 import PlaceholderContent from './PlaceholderContent';
 import Header from '~/components/header/Header.vue';
-// import DeploymentInfo from '~/components/DeploymentInfo.vue';
-// import UnderConstructionMessage from '~/components/UnderConstructionMessage';
+import DeploymentInfo from '~/components/DeploymentInfo.vue';
+import UnderConstructionMessage from '~/components/UnderConstructionMessage';
 
 export default {
   components: {
     Header,
-    // DeploymentInfo,
-    // UnderConstructionMessage,
-    // LoremIpsum,
+    DeploymentInfo,
+    UnderConstructionMessage,
     PlaceholderContent,
+  },
+  created() {
+    this.isProduction = process.env.isProduction;
   },
 };
 </script>

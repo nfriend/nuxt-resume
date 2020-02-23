@@ -1,7 +1,7 @@
 <template>
-  <div class="text-gray-700 pb-4">
+  <div class="text-gray-700 py-4">
     <p>
-      <strong>This site is under construction! 🛠️</strong>
+      <strong>This site is under construction!</strong>
     </p>
     <p>
       In the meantime, check out the source at
