@@ -10,7 +10,7 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-a:not(.btn) {
+a:not(.btn):not(.tag) {
   @apply text-blue-500;
 
   &:hover {
@@ -76,7 +76,7 @@ address {
     @apply text-black;
   }
 
-  a {
+  a:not(.tag) {
     @apply text-black !important;
   }
 
