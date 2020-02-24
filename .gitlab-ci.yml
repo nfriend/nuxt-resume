@@ -58,7 +58,7 @@ screenshot:
     - ci/generate-screenshot.sh
   artifacts:
     paths:
-      - "/tmp/*.png"
+      - "/screenshots/*.png"
 
 pages:
   stage: deploy
