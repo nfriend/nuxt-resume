@@ -49,7 +49,10 @@ screenshot:
     name: alekzonder/puppeteer:latest
   before_script: []
   script:
+    - yarn global add http-server
+    - http-server -p 7777 ${CI_PROJECT_DIR}/dist &
     - node ci/generate-screenshot.js
+    - pkill -f http-server
   artifacts:
     paths:
       - "*.png"
