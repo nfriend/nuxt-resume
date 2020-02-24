@@ -71,6 +71,8 @@ export default {
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
+    // Doc: https://github.com/nuxt-community/analytics-module
+    ['@nuxtjs/google-analytics', { id: 'UA-36351579-2' }],
   ],
   /*
    ** Nuxt.js modules
