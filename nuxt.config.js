@@ -11,7 +11,35 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || '',
+        content: "Nathan Friend's résumé. Built with NuxtJS and Tailwind CSS.",
+      },
+      {
+        property: 'og:type',
+        content: 'website',
+      },
+      {
+        property: 'og:title',
+        content: 'Nathan Friend - Résumé',
+      },
+      {
+        property: 'og:description',
+        content: "Nathan Friend's résumé. Built with NuxtJS and Tailwind CSS.",
+      },
+      {
+        property: 'og:image',
+        content: 'https://resume.nathanfriend.io/screenshot.png',
+      },
+      {
+        property: 'og:image:type',
+        content: 'image/png',
+      },
+      {
+        property: 'og:image:width',
+        content: '1200',
+      },
+      {
+        property: 'og:image:height',
+        content: '630',
       },
       {
         name: 'msapplication-TileColor',

@@ -1,11 +1,15 @@
 # Nuxt Résumé
 
-My résumé, built with [NuxtJS](https://nuxtjs.org/guide/installation) and
-[Tailwind CSS](https://tailwindcss.com/): https://resume.nathanfriend.io
-
 <a href="https://gitlab.com/nfriend/nuxt-resume/pipelines" target="_blank"><img
   src="https://gitlab.com/nfriend/nuxt-resume/badges/master/pipeline.svg"
   alt="GitLab build status"></a>
+
+My résumé, built with [NuxtJS](https://nuxtjs.org/guide/installation) and
+[Tailwind CSS](https://tailwindcss.com/): https://resume.nathanfriend.io (or
+[view as a
+PDF](https://resume.nathanfriend.io/Nathan%20Friend%20-%20R%C3%A9sum%C3%A9.pdf))
+
+![A screenshot of my resume](https://resume.nathanfriend.io/screenshot.png)
 
 ## Data
 
