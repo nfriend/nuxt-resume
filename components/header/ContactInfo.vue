@@ -2,7 +2,7 @@
   <address
     class="flex justify-center sm:justify-start lg:justify-between print:justify-between flex-wrap lg:flex-no-wrap"
   >
-    <template v-for="(item, index) in contactInfo">
+    <template v-for="(item, index) in resumeData.contactInfo">
       <!-- Combined GitLab/GitHub info requires some special handling -->
       <span
         v-if="item.type === 'gitlab+github'"
@@ -32,7 +32,7 @@
 
       <!-- Don't append a separator to the last item  -->
       <span
-        v-if="index !== contactInfo.length - 1"
+        v-if="index !== resumeData.contactInfo.length - 1"
         class="text-gray-600 mx-4 hidden lg:inline print:inline"
       >
         /
@@ -43,14 +43,8 @@
 
 <script>
 import Icon from '../utility/Icon';
-import { resumeData } from '~/resume-data';
 
 export default {
   components: { Icon },
-  computed: {
-    contactInfo() {
-      return resumeData.contactInfo;
-    },
-  },
 };
 </script>
