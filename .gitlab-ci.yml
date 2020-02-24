@@ -47,18 +47,12 @@ screenshot:
   stage: render
   image:
     name: alekzonder/puppeteer:latest
-    entrypoint:
-      - dumb-init
-      - --
-      - screenshot
-      - https://resume.nathanfriend.io
-      - 1200x630
   before_script: []
   script:
-    - ci/generate-screenshot.sh
+    - ci/generate-screenshot.js
   artifacts:
     paths:
-      - "/screenshots/*.png"
+      - /screenshots/*.png
 
 pages:
   stage: deploy
