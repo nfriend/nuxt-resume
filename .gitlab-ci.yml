@@ -46,8 +46,13 @@ pdf:
 screenshot:
   stage: render
   image:
-    name: zenika/alpine-chrome:latest
-    entrypoint: [""]
+    name: alekzonder/puppeteer:latest
+    entrypoint:
+      - dumb-init
+      - --
+      - screenshot
+      - https://resume.nathanfriend.io
+      - 1200x630
   before_script: []
   script:
     - ci/generate-screenshot.sh
