@@ -14,11 +14,13 @@ const puppeteer = require('puppeteer');
     deviceScaleFactor: 1,
   });
 
-  await page.goto('https://resume.nathanfriend.io/', {
+  await page.goto(`file://${process.env.CI_PROJECT_DIR}/dist/index.html`, {
     waitUntil: 'networkidle0',
   });
 
   const screenshotPath = path.resolve(__dirname, '../screenshot.png');
+  // eslint-disable-next-line no-console
+  console.log(`Writing screenshot to ${screenshotPath}`);
   await page.screenshot({ path: screenshotPath });
 
   browser.close();
