@@ -46,7 +46,7 @@ pdf:
 screenshot:
   stage: render
   image:
-    name: zenika/alpine-chrome:latest
+    name: zenika/alpine-chrome:68
     entrypoint: [""]
   before_script: []
   script:
