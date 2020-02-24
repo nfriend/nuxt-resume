@@ -35,27 +35,25 @@ pdf:
   stage: render
   image:
     name: zenika/alpine-chrome:latest
-    entrypoint: [""]
+    entrypoint: ['']
   before_script: []
   script:
     - ci/generate-pdf.sh
   artifacts:
     paths:
-      - "*.pdf"
+      - '*.pdf'
 
 screenshot:
   stage: render
   image:
     name: alekzonder/puppeteer:latest
-  before_script: []
   script:
-    - yarn global add http-server
-    - http-server -p 7777 ${CI_PROJECT_DIR}/dist &
+    - yarn http-server -p 7777 ${CI_PROJECT_DIR}/dist &
     - node ci/generate-screenshot.js
     - pkill -f http-server
   artifacts:
     paths:
-      - "*.png"
+      - '*.png'
 
 pages:
   stage: deploy
