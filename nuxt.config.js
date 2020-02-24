@@ -72,7 +72,7 @@ export default {
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
     // Doc: https://github.com/nuxt-community/analytics-module
-    ['@nuxtjs/google-analytics', { id: 'UA-36351579-2' }],
+    ['@nuxtjs/google-analytics', { id: 'UA-36351579-3' }],
   ],
   /*
    ** Nuxt.js modules
