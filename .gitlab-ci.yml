@@ -49,7 +49,7 @@ screenshot:
     name: alekzonder/puppeteer:latest
   before_script: []
   script:
-    - ci/generate-screenshot.js
+    - node ci/generate-screenshot.js
   artifacts:
     paths:
       - /screenshots/*.png
