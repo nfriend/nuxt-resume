@@ -8,4 +8,6 @@ chromium-browser --headless \
                  --screeenshot="screenshot.png" \
                  --hide-scrollbars \
                  --window-size=1200,630 \
+                 --enable-logging=stderr \
+                 --v=1 \
                  file://$CI_PROJECT_DIR/dist/index.html
