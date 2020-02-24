@@ -2,8 +2,10 @@
 
 chromium-browser --headless \
                  --disable-gpu \
+                 --disable-software-rasterizer \
+                 --disable-dev-shm-usage \
                  --no-sandbox \
                  --screeenshot="screenshot.png" \
-                 --window-size=1200,630 \
                  --hide-scrollbars \
+                 --window-size=1200,630 \
                  file://$CI_PROJECT_DIR/dist/index.html
