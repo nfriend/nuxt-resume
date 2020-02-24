@@ -2,7 +2,6 @@
 
 chromium-browser --headless \
                  --disable-gpu \
-                 --disable-dev-shm-usage \
                  --no-sandbox \
                  --screeenshot="screenshot.pdf" \
                  --window-size=1200,630 \
