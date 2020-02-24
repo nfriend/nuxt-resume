@@ -2,7 +2,6 @@
 
 chromium-browser --headless \
                  --disable-gpu \
-                 --disable-software-rasterizer \
                  --disable-dev-shm-usage \
                  --no-sandbox \
                  --screeenshot="screenshot.pdf" \
