@@ -1,4 +1,4 @@
-export default {
+const config = {
   mode: 'universal',
   /*
    ** Headers of the page
@@ -51,6 +51,11 @@ export default {
       },
     ],
     link: [
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css?family=Bitter:400,400i,700&display=swap',
+      },
       {
         rel: 'apple-touch-icon',
         sizes: '180x180',
@@ -137,3 +142,5 @@ export default {
     host: '0.0.0.0',
   },
 };
+
+export default config;

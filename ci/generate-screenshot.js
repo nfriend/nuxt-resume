@@ -18,10 +18,6 @@ const puppeteer = require('puppeteer');
     waitUntil: 'networkidle0',
   });
 
-  // Wait for fonts to load
-  // https://github.com/puppeteer/puppeteer/issues/2692#issuecomment-414319342
-  await page.evaluateHandle('document.fonts.ready');
-
   const screenshotPath = path.resolve(__dirname, '../screenshot.png');
   // eslint-disable-next-line no-console
   console.log(`Writing screenshot to ${screenshotPath}`);
