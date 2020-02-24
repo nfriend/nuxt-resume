@@ -7,9 +7,11 @@ const puppeteer = require('puppeteer');
 
   const page = await browser.newPage();
 
-  await page.goto('https://www.google.com/', { waitUntil: 'networkidle' });
+  await page.goto('https://resume.nathanfriend.io/', {
+    waitUntil: 'networkidle2',
+  });
 
-  await page.screenshot({ path: 'google.png' });
+  await page.screenshot({ path: 'screenshot.png' });
 
   browser.close();
 })();
