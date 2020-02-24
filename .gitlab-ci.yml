@@ -52,7 +52,7 @@ screenshot:
     - node ci/generate-screenshot.js
   artifacts:
     paths:
-      - /screenshots/*.png
+      - "*.png"
 
 pages:
   stage: deploy
