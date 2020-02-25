@@ -47,6 +47,7 @@ screenshot:
   stage: render
   image:
     name: alekzonder/puppeteer:latest
+  before_script: []
   script:
     - node ci/generate-screenshot.js
   artifacts:
