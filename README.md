@@ -22,6 +22,11 @@ will be merged into [`resume-data.js`](./resume-data.js) when building this
 résumé. This is used to protect personal info such as phone numbers and
 addresses.
 
+## Inspiration
+
+This project was heavily inspired by the [Universal Résumé
+Template](https://universal-resume-pages.netlify.com/).
+
 ## Build Setup
 
 ```bash
