@@ -14,7 +14,7 @@ const puppeteer = require('puppeteer');
     deviceScaleFactor: 1,
   });
 
-  await page.goto('http://127.0.0.1:7777', {
+  await page.goto(`file://${process.env.CI_PROJECT_DIR}/dist/index.html`, {
     waitUntil: 'networkidle0',
   });
 
