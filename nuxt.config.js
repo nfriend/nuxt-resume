@@ -52,6 +52,11 @@ const config = {
     ],
     link: [
       {
+        rel: 'preconnect',
+        crossorigin: true,
+        href: 'https://fonts.gstatic.com',
+      },
+      {
         rel: 'stylesheet',
         href:
           'https://fonts.googleapis.com/css?family=Bitter:400,400i,700&display=swap',
