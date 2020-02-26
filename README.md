@@ -11,6 +11,8 @@ PDF](https://resume.nathanfriend.io/Nathan%20Friend%20-%20R%C3%A9sum%C3%A9.pdf))
 
 ![A screenshot of my resume](https://resume.nathanfriend.io/screenshot.png)
 
+:warning: **This is work in progress!** :warning:
+
 ## Data
 
 All of the content of this resume is sourced from
