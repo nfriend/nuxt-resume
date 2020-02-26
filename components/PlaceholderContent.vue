@@ -58,10 +58,7 @@
         Acted 55% pork chop • Filled burgdoggen & frankfurter strip steak with
         90% burger patties and broth • Filet mignon burgdoggen tri-tip swine
         pork belly ham hock flank pork. Ribeye turducken pancetta sausage.
-        Biltong atl. Bacon ham shankle, landjaeg pastrami beef. • Filet mignon
-        burgdoggen tri-tip swine pork belly ham hock flank pork. Ribeye
-        turducken pancetta sausage. Biltong atl. Bacon ham shankle, landjaeg
-        pastrami beef.
+        Biltong atl. Bacon ham shankle, landjaeg pastrami beef.
       </p>
       <section class="tags-container">
         <Tag link="https://angular.io/">Angular</Tag>
