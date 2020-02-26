@@ -1,5 +1,5 @@
 <template>
-  <div class="flex mt-4 text-justify">
+  <div class="flex mt-4 text-justify flex-col md:flex-row">
     <div class="flex-1 mr-4">
       <h2 class="font-bold uppercase text-gray-700 text-sm mb-4">Experience</h2>
 
@@ -12,7 +12,7 @@
         Acted 55% pork chop • Filled burgdoggen & frankfurter strip steak with
         90% burger patties and broth
       </p>
-      <section class="tags-container flex mb-4">
+      <section class="tags-container">
         <Tag link="https://vuejs.org/">Vue.js</Tag>
         <Tag link="https://vuejs.org/">JavaScript</Tag>
         <Tag link="https://sass-lang.com/">SCSS</Tag>
@@ -28,7 +28,7 @@
         Acted 55% pork chop • Filled burgdoggen & frankfurter strip steak with
         90% burger patties and broth
       </p>
-      <section class="tags-container flex mb-4">
+      <section class="tags-container">
         <Tag link="https://angular.io/">Angular</Tag>
         <Tag link="http://www.typescriptlang.org/">TypeScript</Tag>
         <Tag link="https://sass-lang.com/">SCSS</Tag>
@@ -46,7 +46,7 @@
         Acted 55% pork chop • Filled burgdoggen & frankfurter strip steak with
         90% burger patties and broth
       </p>
-      <section class="tags-container flex mb-4">
+      <section class="tags-container">
         <Tag link="https://angular.io/">Angular</Tag>
         <Tag link="http://www.typescriptlang.org/">TypeScript</Tag>
         <Tag link="https://sass-lang.com/">SCSS</Tag>
@@ -54,7 +54,7 @@
         <Tag link="https://dotnet.microsoft.com/apps/aspnet">ASP.NET</Tag>
       </section>
     </div>
-    <div class="flex-1 ml-4">
+    <div class="flex-1 ml-0 md:ml-4">
       <h2 class="font-bold uppercase text-gray-700 text-sm mb-4 pt-2">
         Education
       </h2>
@@ -74,7 +74,7 @@
       </h2>
 
       <h3 class="font-bold text-lg mb-2">Languages</h3>
-      <section class="tags-container flex flex-wrap mb-4">
+      <section class="tags-container">
         <Tag>JavaScript</Tag>
         <Tag>TypeScript</Tag>
         <Tag>C♯</Tag>
@@ -83,7 +83,7 @@
       </section>
 
       <h3 class="font-bold text-lg mb-2">Frameworks</h3>
-      <section class="tags-container flex flex-wrap mb-4">
+      <section class="tags-container">
         <Tag>Vue.js</Tag>
         <Tag>Angular</Tag>
         <Tag>React</Tag>
@@ -91,7 +91,7 @@
       </section>
 
       <h3 class="font-bold text-lg mb-2">Concepts</h3>
-      <section class="tags-container flex flex-wrap mb-4">
+      <section class="tags-container">
         <Tag>Single Page Applications (SPAs)</Tag>
         <Tag>Internationalization (i18n)</Tag>
         <Tag>Web analytics</Tag>
@@ -112,7 +112,7 @@
       <h4 class="text-gray-700 mb-2">
         Jan 2013 – May 2013 | Visual Logic Group
       </h4>
-      <section class="tags-container flex mb-4">
+      <section class="tags-container">
         <Tag>JavaScript</Tag>
         <Tag>CSS</Tag>
       </section>
@@ -121,7 +121,7 @@
       <h4 class="text-gray-700 mb-2">
         Jan 2012 – May 2013 | Dordt College
       </h4>
-      <section class="tags-container flex mb-4">
+      <section class="tags-container">
         <Tag>Perl</Tag>
         <Tag>PHP</Tag>
         <Tag>Drupal</Tag>
@@ -131,7 +131,7 @@
       <h4 class="text-gray-700 mb-2">
         May 2012 – Aug 2012 | DuPont Pioneer
       </h4>
-      <section class="tags-container flex mb-4">
+      <section class="tags-container">
         <Tag>JavaScript</Tag>
         <Tag>jQuery</Tag>
         <Tag>ASP.NET</Tag>
@@ -142,7 +142,7 @@
       <h4 class="text-gray-700 mb-2">
         Apr 2011 – Aug 2011 | SnupNow, LLC
       </h4>
-      <section class="tags-container flex mb-4">
+      <section class="tags-container">
         <Tag>HTML</Tag>
         <Tag>CSS</Tag>
       </section>
@@ -156,3 +156,9 @@ export default {
   components: { Tag },
 };
 </script>
+
+<style lang="postcss" scoped>
+.tags-container {
+  @apply flex flex-wrap mb-4 justify-start;
+}
+</style>
