@@ -1,5 +1,5 @@
 <template>
-  <div class="flex mt-4 text-justify flex-col md:flex-row">
+  <div class="flex mt-4 text-justify flex-col md:flex-row print:flex-row">
     <div class="flex-1 mr-4">
       <h2 class="font-bold uppercase text-gray-700 text-sm mb-4">Experience</h2>
 
@@ -71,7 +71,7 @@
         <Tag link="https://dotnet.microsoft.com/apps/aspnet">ASP.NET</Tag>
       </section>
     </div>
-    <div class="flex-1 ml-0 md:ml-4">
+    <div class="flex-1 ml-0 md:ml-4 print:ml-4">
       <h2 class="font-bold uppercase text-gray-700 text-sm mb-4 pt-2">
         Education
       </h2>
