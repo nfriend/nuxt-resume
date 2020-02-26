@@ -1,12 +1,12 @@
 <template>
-  <header>
-    <div class="flex items-stretch sm:items-start flex-col sm:flex-row">
+  <header class="flex flex-col">
+    <div class="flex items-stretch sm:items-start flex-col-reverse sm:flex-row">
       <h1 class="flex-grow flex-shrink-0 text-center sm:text-left">
         <Kerned :letters="resumeData.title" />
       </h1>
       <PdfLink />
     </div>
-    <section>
+    <section class="self-center -mr-16 sm:self-stretch sm:mr-0">
       <ContactInfo />
     </section>
   </header>

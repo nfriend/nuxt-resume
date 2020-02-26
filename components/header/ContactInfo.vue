@@ -1,12 +1,12 @@
 <template>
   <address
-    class="flex justify-start lg:justify-between print:justify-between flex-wrap  lg:flex-no-wrap"
+    class="flex flex-wrap flex-col sm:flex-row sm:justify-start lg:justify-between print:justify-between lg:flex-no-wrap text-2xl sm:text-base"
   >
     <template v-for="(item, index) in resumeData.contactInfo">
       <!-- Combined GitLab/GitHub info requires some special handling -->
       <span
         v-if="item.type === 'gitlab+github'"
-        class="flex items-center whitespace-no-wrap mr-6 lg:mr-0 print:mr-0"
+        class="flex items-center whitespace-no-wrap mr-6 lg:mr-0 print:mr-0 mb-2 sm:mb-0"
       >
         <a :href="item.links.gitlab">
           <Icon type="gitlab" class="mr-1" />
@@ -22,7 +22,7 @@
       <!-- All other contact info types -->
       <template v-else>
         <a
-          class="flex items-center whitespace-no-wrap mr-6 lg:mr-0 print:mr-0"
+          class="flex items-center whitespace-no-wrap mr-6 lg:mr-0 print:mr-0 mb-2 sm:mb-0"
           :href="item.link"
         >
           <Icon :type="item.type" class="mr-1" />
