@@ -26,6 +26,6 @@ export default {
 <style lang="postcss" scoped>
 a,
 span {
-  @apply text-gray-700 bg-gray-300 text-sm px-2 py-1 mr-1;
+  @apply text-gray-700 bg-gray-300 text-sm px-2 py-1 mr-1 mb-1;
 }
 </style>
