@@ -51,3 +51,7 @@ For other useful commands, check out the `scripts` defined in
 
 For detailed explanation on how things work, check out [Nuxt.js
 docs](https://nuxtjs.org).
+
+---
+
+Testing README editing.
