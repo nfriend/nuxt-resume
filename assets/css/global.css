@@ -72,8 +72,12 @@ h1 {
     @apply text-black;
   }
 
-  a:not(.tag) {
-    @apply text-black !important;
+  a:not(.btn):not(.tag) {
+    @apply text-black;
+
+    &:visited {
+      @apply text-black;
+    }
   }
 
   .btn {
