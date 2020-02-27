@@ -11,8 +11,8 @@ module.exports = {
       md: '639px',
       lg: '767px',
       xl: '1280px',
-      '2xl': '1440',
-      '3xl': '2160',
+      '2xl': '1440px',
+      '3xl': '2160px',
       paper: '8.5in',
       print: {
         raw: 'print',
@@ -34,6 +34,11 @@ module.exports = {
       },
       fontSize: {
         '7xl': '5rem',
+      },
+      scale: {
+        '120': '1.2',
+        '140': '1.4',
+        '160': '1.6',
       },
     },
   },

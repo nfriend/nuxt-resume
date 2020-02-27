@@ -1,65 +1,9 @@
-.w-paper {
-  width: 8.5in;
-}
-
-.h-paper {
-  height: 11in;
-}
-
-.paper-page {
-  @apply w-paper
-         h-paper
-         flex
-         flex-col
-         p-20
-         my-20
-         mx-auto
-         shadow-2xl
-         bg-ivory
-         origin-top;
-}
-
-@media screen and (min-width: 1280px) {
-  .paper-page {
-    transform: scale(1.2);
+@responsive {
+  .w-paper {
+    width: 8.5in;
   }
-}
 
-@media screen and (min-width: 1440px) {
-  .paper-page {
-    transform: scale(1.4);
-  }
-}
-
-@media screen and (min-width: 2160px) {
-  .paper-page {
-    transform: scale(1.6);
-  }
-}
-
-@media screen and (max-width: 8.5in) {
-  .paper-page {
-    @apply w-full
-           h-auto
-           my-0
-           shadow-none;
-  }
-}
-
-@media screen and (max-width: 639px) {
-  .paper-page {
-    @apply p-10 text-xl;
-  }
-}
-
-@media screen and (max-width: 575px) {
-  .paper-page {
-    @apply p-4 text-xl;
-  }
-}
-
-@media print {
-  .paper-page {
-    @apply my-0 shadow-none bg-transparent;
+  .h-paper {
+    height: 11in;
   }
 }
