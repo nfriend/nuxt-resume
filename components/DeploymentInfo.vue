@@ -16,7 +16,7 @@
     >
       <img
         class="inline h-5"
-        src="https://gitlab.com/nfriend/nuxt-resume/badges/master/pipeline.svg"
+        :src="pipelineStatusUrl"
         alt="GitLab build status"
       />
     </a>
@@ -33,6 +33,14 @@ import Icon from './utility/Icon';
 
 export default {
   components: { Icon },
+  data: () => ({
+    pipelineStatusUrl: '',
+  }),
+  methods: {
+    refreshPipelineStatus() {
+      this.pipelineStatusUrl = `https://gitlab.com/nfriend/nuxt-resume/badges/master/pipeline.svg#${Date.now()}`;
+    },
+  },
   created() {
     this.isProduction = process.env.isProduction;
     this.deployedTimestamp = moment(process.env.gitlabCi.timestamp)
@@ -40,6 +48,9 @@ export default {
       .format('Y/MM/DD \\a\\t HH:mm:ss z');
     this.commitLink = `${process.env.gitlabCi.projectUrl}/commit/${this.commitSha}`;
     this.commitSha = process.env.gitlabCi.commitSha;
+
+    setInterval(this.refreshPipelineStatus, 5000);
+    this.refreshPipelineStatus();
   },
 };
 </script>
