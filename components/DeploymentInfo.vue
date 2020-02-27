@@ -1,5 +1,5 @@
 <template>
-  <div class="italic text-gray-700 print:hidden">
+  <div class="italic text-gray-700 text-center print:hidden">
     <span v-if="isProduction" class="mr-4">
       Last deployed on {{ deployedTimestamp }} for commit
       <a :href="commitLink">{{ commitSha }}</a>
@@ -15,13 +15,22 @@
         alt="GitLab build status"
       />
     </a>
+    <a
+      href="https://gitlab.com/nfriend/nuxt-resume"
+      class="inline-flex items-center"
+    >
+      View the source on GitLab
+      <Icon class="ml-1" type="gitlab" />
+    </a>
   </div>
 </template>
 
 <script>
 import moment from 'moment';
+import Icon from './utility/Icon';
 
 export default {
+  components: { Icon },
   computed: {
     isProduction() {
       return process.env.isProduction;

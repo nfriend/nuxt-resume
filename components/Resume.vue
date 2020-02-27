@@ -19,7 +19,7 @@
       <!-- <UnderConstructionMessage v-if="isProduction" /> -->
       <PlaceholderContent class="flex-grow" />
     </div>
-    <DeploymentInfo class="self-center mb-10" />
+    <DeploymentInfo class="mb-10" />
   </div>
 </template>
 
