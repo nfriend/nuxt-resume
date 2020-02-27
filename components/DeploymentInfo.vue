@@ -33,21 +33,13 @@ import Icon from './utility/Icon';
 
 export default {
   components: { Icon },
-  computed: {
-    isProduction() {
-      return process.env.isProduction;
-    },
-    deployedTimestamp() {
-      return moment(process.env.gitlabCi.timestamp)
-        .utc()
-        .format('Y/MM/DD \\a\\t HH:mm:ss z');
-    },
-    commitLink() {
-      return `${process.env.gitlabCi.projectUrl}/commit/${this.commitSha}`;
-    },
-    commitSha() {
-      return process.env.gitlabCi.commitSha;
-    },
+  created() {
+    this.isProduction = process.env.isProduction;
+    this.deployedTimestamp = moment(process.env.gitlabCi.timestamp)
+      .utc()
+      .format('Y/MM/DD \\a\\t HH:mm:ss z');
+    this.commitLink = `${process.env.gitlabCi.projectUrl}/commit/${this.commitSha}`;
+    this.commitSha = process.env.gitlabCi.commitSha;
   },
 };
 </script>
