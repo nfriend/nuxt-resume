@@ -1,6 +1,6 @@
 # Nuxt Résumé
 
-<a href="https://gitlab.com/nfriend/nuxt-resume/pipelines" target="_blank"><img
+<a href="https://gitlab.com/nfriend/nuxt-resume/pipelines/latest" target="_blank"><img
   src="https://gitlab.com/nfriend/nuxt-resume/badges/master/pipeline.svg"
   alt="GitLab build status"></a>
 
