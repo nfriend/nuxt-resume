@@ -44,10 +44,6 @@ h1 {
          pb-4;
 }
 
-address {
-  @apply not-italic pb-4;
-}
-
 @media screen and (max-width: 8.5in) {
   html,
   body {

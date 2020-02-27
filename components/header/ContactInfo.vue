@@ -1,6 +1,12 @@
 <template>
   <address
-    class="flex flex-wrap flex-col sm:flex-row sm:justify-start lg:justify-between print:justify-between lg:flex-no-wrap text-2xl sm:text-base"
+    class="flex
+           flex-wrap lg:flex-no-wrap
+           flex-col sm:flex-row
+           sm:justify-start lg:justify-between print:justify-between
+           text-2xl sm:text-base
+           pb-4
+           not-italic"
   >
     <template v-for="(item, index) in resumeData.contactInfo">
       <!-- Combined GitLab/GitHub info requires some special handling -->
