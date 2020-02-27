@@ -1,24 +1,26 @@
 <template>
-  <div class="italic text-gray-700 text-center print:hidden">
-    <span v-if="isProduction" class="mr-4">
+  <div
+    class="flex flex-wrap
+           justify-center items-center
+           text-gray-700
+           print:hidden"
+  >
+    <span v-if="isProduction" class="mr-2">
       Last deployed on {{ deployedTimestamp }} for commit
       <a :href="commitLink">{{ commitSha }}</a>
     </span>
     <span v-else class="mr-2">Running locally</span>
     <a
-      class="mr-2"
+      class="flex items-center mr-2"
       href="https://gitlab.com/nfriend/nuxt-resume/pipelines/latest"
     >
       <img
-        class="inline h-5 -mt-1"
+        class="inline h-5"
         src="https://gitlab.com/nfriend/nuxt-resume/badges/master/pipeline.svg"
         alt="GitLab build status"
       />
     </a>
-    <a
-      href="https://gitlab.com/nfriend/nuxt-resume"
-      class="inline-flex items-center"
-    >
+    <a href="https://gitlab.com/nfriend/nuxt-resume" class="flex items-center">
       View the source on GitLab
       <Icon class="ml-1" type="gitlab" />
     </a>
