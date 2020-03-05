@@ -31,7 +31,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  html-proofer
+  html-proofer (~> 3.15.1)
 
 BUNDLED WITH
    2.0.2

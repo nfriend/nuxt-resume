@@ -3,5 +3,5 @@
 source "https://rubygems.org"
 
 group :development do
-  gem 'html-proofer'
+  gem 'html-proofer', '~> 3.15.1'
 end
