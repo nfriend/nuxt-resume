@@ -1,3 +1,6 @@
+const googleFontsLink =
+  'https://fonts.googleapis.com/css?family=Bitter:400,400i,700&display=swap';
+
 const config = {
   mode: 'universal',
   /*
@@ -54,12 +57,11 @@ const config = {
       {
         rel: 'preconnect',
         crossorigin: true,
-        href: 'https://fonts.gstatic.com',
+        href: googleFontsLink,
       },
       {
         rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Bitter:400,400i,700&display=swap',
+        href: googleFontsLink,
       },
       {
         rel: 'apple-touch-icon',
