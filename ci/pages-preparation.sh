@@ -3,12 +3,6 @@
 echo 'Copying the "dist" directory to "public"...'
 cp -r dist public
 
-echo 'Copying the all PDFs to "public"...'
-cp *.pdf public
-
-echo 'Copying the all PNGs to "public"...'
-cp *.png public
-
 # Run gzip on the output and create a .gz version of each relevant file
 # Based on https://webmasters.stackexchange.com/a/119671
 echo "Creating a gzip'd version of each of the relevant static files..."

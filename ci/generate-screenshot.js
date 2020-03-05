@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 const puppeteer = require('puppeteer');
 
 (async () => {
@@ -18,9 +19,16 @@ const puppeteer = require('puppeteer');
     waitUntil: 'networkidle0',
   });
 
-  const screenshotPath = path.resolve(__dirname, '../screenshot.png');
+  const distDir = path.resolve(__dirname, '../dist');
+  if (!fs.existsSync(distDir)) {
+    fs.mkdirSync(distDir);
+  }
+
+  const screenshotPath = path.resolve(distDir, 'screenshot.png');
+
   // eslint-disable-next-line no-console
   console.log(`Writing screenshot to ${screenshotPath}`);
+
   await page.screenshot({ path: screenshotPath });
 
   browser.close();

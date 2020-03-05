@@ -5,7 +5,11 @@ require 'html-proofer'
 
 dist_dir = File.expand_path(File.join(__dir__, '../dist'))
 HTMLProofer.check_directory(dist_dir, {
-  :url_ignore => ['/Nathan Friend - Résumé.pdf'],
+  :check_html => true,
+  :check_opengraph => true,
+  :check_favicon => true,
+  :check_img_http => true,
+  :enforce_https => true,
 
   # LinkedIn does user-agent filtering:
   # https://github.com/gjtorikian/html-proofer/issues/215
