@@ -16,25 +16,22 @@
            bg-ivory print:bg-transparent"
     >
       <Header />
-      <!-- <UnderConstructionMessage v-if="isProduction" /> -->
-      <PlaceholderContent class="flex-grow" />
+      <Content class="flex-grow" />
     </div>
     <DeploymentInfo class="mb-10" />
   </div>
 </template>
 
 <script>
-import PlaceholderContent from './PlaceholderContent';
+import Content from './Content';
 import Header from '~/components/header/Header.vue';
 import DeploymentInfo from '~/components/DeploymentInfo.vue';
-// import UnderConstructionMessage from '~/components/UnderConstructionMessage';
 
 export default {
   components: {
     Header,
     DeploymentInfo,
-    // UnderConstructionMessage,
-    PlaceholderContent,
+    Content,
   },
   created() {
     this.isProduction = process.env.isProduction;
