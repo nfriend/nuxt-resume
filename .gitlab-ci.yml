@@ -57,6 +57,10 @@ screenshot:
 html proofer:
   stage: lint html
   image: ruby:2.7
+  variables:
+    LANG: en_US.UTF-8
+    LANGUAGE: en_US.UTF-8
+    LC_ALL: en_US.UTF-8
   before_script:
     - ruby -v
     - bundle install -j $(nproc) --path vendor/ruby
