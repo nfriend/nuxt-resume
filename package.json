@@ -13,7 +13,7 @@
     "test:watch": "jest --watch",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint:fix": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
-    "html-lint": "ci/run-html-proofer.rb"
+    "html-lint": "htmlproofer --url-ignore '/Nathan Friend - Résumé.pdf' ./dist"
   },
   "dependencies": {
     "lodash": "^4.17.15",
