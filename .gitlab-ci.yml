@@ -1,17 +1,17 @@
-image: node:latest
+default:
+  image: node:latest
+  before_script:
+    - yarn
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules/
 
 stages:
   - test lint build
   - render
+  - lint html
   - deploy
-
-before_script:
-  - yarn
-
-cache:
-  key: ${CI_COMMIT_REF_SLUG}
-  paths:
-    - node_modules/
 
 test:
   stage: test lint build
@@ -53,6 +53,14 @@ screenshot:
   artifacts:
     paths:
       - "*.png"
+
+html proofer:
+  stage: lint html
+  image: ruby:2.7
+  before_script:
+    - bundle install
+  script:
+    - ci/run-html-proofer.rb
 
 pages:
   stage: deploy

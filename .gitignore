@@ -91,3 +91,6 @@ sw.*
 
 # Private resume data
 resume-data.private.js
+
+# Bundler
+.bundle
