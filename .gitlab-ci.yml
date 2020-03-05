@@ -35,13 +35,13 @@ pdf:
   stage: render
   image:
     name: zenika/alpine-chrome:latest
-    entrypoint: [""]
+    entrypoint: ['']
   before_script: []
   script:
     - ci/generate-pdf.sh
   artifacts:
     paths:
-      - "*.pdf"
+      - '*.pdf'
 
 screenshot:
   stage: render
@@ -52,15 +52,20 @@ screenshot:
     - node ci/generate-screenshot.js
   artifacts:
     paths:
-      - "*.png"
+      - '*.png'
 
 html proofer:
   stage: lint html
   image: ruby:2.7
   before_script:
-    - bundle install
+    - ruby -v
+    - bundle install -j $(nproc) --path vendor/ruby
   script:
-    - ci/run-html-proofer.rb
+    - htmlproofer ./dist
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - vendor/ruby
 
 pages:
   stage: deploy
