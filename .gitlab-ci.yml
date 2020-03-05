@@ -65,7 +65,7 @@ html proofer:
     - ruby -v
     - bundle install -j $(nproc) --path vendor/ruby
   script:
-    - bundle exec htmlproofer ./dist
+    - ci/run-html-proofer.sh
   cache:
     key: ${CI_COMMIT_REF_SLUG}
     paths:
