@@ -1,6 +1,7 @@
 # Nuxt Résumé
 
-<a href="https://gitlab.com/nfriend/nuxt-resume/pipelines/latest" target="_blank"><img
+<a href="https://gitlab.com/nfriend/nuxt-resume/pipelines/latest"
+  target="_blank"><img
   src="https://gitlab.com/nfriend/nuxt-resume/badges/master/pipeline.svg"
   alt="GitLab build status"></a>
 
@@ -48,6 +49,21 @@ $ yarn generate
 
 For other useful commands, check out the `scripts` defined in
 [`package.json`](./package.json).
+
+### HTML linting
+
+One `yarn` script in particular - `yarn html-lint` - requires some setup before it
+will run:
+
+- Install [Ruby](https://www.ruby-lang.org/en/)
+- Install [Bundler](https://bundler.io/)
+- Run `bundle install` at the root of this project
+- Run `yarn generate` to generate a production build in `./dist`
+
+Once these prerequisites have been completed, running `yarn html-lint` will run
+[`html-proofer`](https://github.com/gjtorikian/html-proofer) on the output
+`*.html`. This is particularly useful for validating that all external links are
+still valid.
 
 ### More info
 
