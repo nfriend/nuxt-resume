@@ -238,53 +238,25 @@ export const resumeData = {
                     display: 'Vue.js',
                     link: 'https://vuejs.org/',
                   },
-                  {
-                    display: 'Angular',
-                  },
-                  {
-                    display: 'React',
-                  },
-                  {
-                    display: 'ASP.NET',
-                  },
-                  {
-                    display: 'Rails',
-                  },
+                  'Angular',
+                  'React',
+                  'ASP.NET',
+                  'Rails',
                 ],
               },
               {
                 title: 'Concepts',
                 tags: [
-                  {
-                    display: 'Single Page Applications (SPAs)',
-                  },
-                  {
-                    display: 'Internationalization (i18n)',
-                  },
-                  {
-                    display: 'Web analytics',
-                  },
-                  {
-                    display: 'Unit testing',
-                  },
-                  {
-                    display: 'Continuous deployment',
-                  },
-                  {
-                    display: 'User experience testing',
-                  },
-                  {
-                    display: 'REST API design',
-                  },
-                  {
-                    display: 'Cross-browser debugging',
-                  },
-                  {
-                    display: 'Responsive design',
-                  },
-                  {
-                    display: 'Developer workflow optimization',
-                  },
+                  'Single Page Applications (SPAs)',
+                  'Internationalization (i18n)',
+                  'Web analytics',
+                  'Unit testing',
+                  'Continuous deployment',
+                  'User experience testing',
+                  'REST API design',
+                  'Cross-browser debugging',
+                  'Responsive design',
+                  'Developer workflow optimization',
                 ],
               },
             ],
@@ -300,25 +272,13 @@ export const resumeData = {
                     display: 'JavaScript',
                     link: 'https://vuejs.org/',
                   },
-                  {
-                    display: 'CSS',
-                  },
+                  'CSS',
                 ],
               },
               {
                 title: 'Web Developer',
                 subtitle: 'Jan 2012 – May 2013 | Dordt College',
-                tags: [
-                  {
-                    display: 'Perl',
-                  },
-                  {
-                    display: 'PHP',
-                  },
-                  {
-                    display: 'Drupal',
-                  },
-                ],
+                tags: ['Perl', 'PHP', 'Drupal'],
               },
               {
                 title: 'Software Development Intern',
@@ -328,28 +288,15 @@ export const resumeData = {
                     display: 'JavaScript',
                     link: 'https://vuejs.org/',
                   },
-                  {
-                    display: 'jQuery',
-                  },
-                  {
-                    display: 'ASP.NET',
-                  },
-                  {
-                    display: 'C♯',
-                  },
+                  'jQuery',
+                  'ASP.NET',
+                  'C♯',
                 ],
               },
               {
                 title: 'Web Development Intern',
                 subtitle: 'Apr 2011 – Aug 2011 | SnupNow, LLC',
-                tags: [
-                  {
-                    display: 'HTML',
-                  },
-                  {
-                    display: 'CSS',
-                  },
-                ],
+                tags: ['HTML', 'CSS'],
               },
             ],
           },
