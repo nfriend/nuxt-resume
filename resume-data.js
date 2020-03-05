@@ -142,12 +142,218 @@ export const resumeData = {
                   },
                 ],
               },
+              {
+                title: {
+                  display: 'DuPont Pioneer',
+                  link: 'https://www.pioneer.com/us',
+                },
+                subtitle:
+                  'May 2013 – Jul 2016 | Software Development Specialist',
+                description:
+                  'Built doner pork chop • Served salmon, cream soft cheese, and brisket • Acted 55% pork chop • Filet mignon burgdoggen tri-tip swine pork belly ham hock flank pork. Ribeye turducken pancetta sausage. Biltong atl. Bacon ham shankle, landjaeg pastrami beef.',
+                highlights: [
+                  'Filet mignon burgdoggen tri-tip swine pork belly ham hock flank pork.',
+                  'Served salmon, cream soft cheese, and brisket',
+                  'Acted 55% pork chop',
+                  'Filled burgdoggen & frankfurter strip steak with 90% burger patties and broth',
+                ],
+                tags: [
+                  {
+                    display: 'Vue.js',
+                    link: 'https://vuejs.org/',
+                  },
+                  {
+                    display: 'JavaScript',
+                    link: 'https://vuejs.org/',
+                  },
+                  {
+                    display: 'SCSS',
+                    link: 'https://sass-lang.com/',
+                  },
+                  {
+                    display: 'Ruby',
+                    link: 'https://www.ruby-lang.org/en/',
+                  },
+                ],
+              },
             ],
           },
         ],
       },
       {
-        /* column 2 goes here */
+        sections: [
+          {
+            title: 'Education',
+            subsections: [
+              {
+                title: {
+                  display: 'Iowa State University',
+                  link: 'https://www.iastate.edu/',
+                },
+                subtitle:
+                  "2016 – 2019 | Master's in Human-Computer Interaction",
+              },
+              {
+                title: {
+                  display: 'Dordt University',
+                  link: 'https://www.dordt.edu/',
+                },
+                subtitle: "2009 – 2013 | Bachelor's in Computer Science",
+              },
+            ],
+          },
+          {
+            title: 'Skills',
+            subsections: [
+              {
+                title: 'Languages',
+                tags: [
+                  {
+                    display: 'JavaScript',
+                    link: 'https://vuejs.org/',
+                  },
+                  {
+                    display: 'TypeScript',
+                    link: 'https://www.typescriptlang.org/',
+                  },
+                  {
+                    display: 'C♯',
+                    link:
+                      'https://en.wikipedia.org/wiki/C_Sharp_(programming_language)',
+                  },
+                  {
+                    display: 'Ruby',
+                    link: 'https://www.ruby-lang.org/en/',
+                  },
+                  {
+                    display: 'SQL',
+                    link: 'https://en.wikipedia.org/wiki/SQL',
+                  },
+                ],
+              },
+              {
+                title: 'Frameworks',
+                tags: [
+                  {
+                    display: 'Vue.js',
+                    link: 'https://vuejs.org/',
+                  },
+                  {
+                    display: 'Angular',
+                  },
+                  {
+                    display: 'React',
+                  },
+                  {
+                    display: 'ASP.NET',
+                  },
+                  {
+                    display: 'Rails',
+                  },
+                ],
+              },
+              {
+                title: 'Concepts',
+                tags: [
+                  {
+                    display: 'Single Page Applications (SPAs)',
+                  },
+                  {
+                    display: 'Internationalization (i18n)',
+                  },
+                  {
+                    display: 'Web analytics',
+                  },
+                  {
+                    display: 'Unit testing',
+                  },
+                  {
+                    display: 'Continuous deployment',
+                  },
+                  {
+                    display: 'User experience testing',
+                  },
+                  {
+                    display: 'REST API design',
+                  },
+                  {
+                    display: 'Cross-browser debugging',
+                  },
+                  {
+                    display: 'Responsive design',
+                  },
+                  {
+                    display: 'Developer workflow optimization',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            title: 'Internships/Part-time',
+            subsections: [
+              {
+                title: 'UX Development Intern',
+                subtitle: 'Jan 2013 – May 2013 | Visual Logic Group',
+                tags: [
+                  {
+                    display: 'JavaScript',
+                    link: 'https://vuejs.org/',
+                  },
+                  {
+                    display: 'CSS',
+                  },
+                ],
+              },
+              {
+                title: 'Web Developer',
+                subtitle: 'Jan 2012 – May 2013 | Dordt College',
+                tags: [
+                  {
+                    display: 'Perl',
+                  },
+                  {
+                    display: 'PHP',
+                  },
+                  {
+                    display: 'Drupal',
+                  },
+                ],
+              },
+              {
+                title: 'Software Development Intern',
+                subtitle: 'May 2012 – Aug 2012 | DuPont Pioneer',
+                tags: [
+                  {
+                    display: 'JavaScript',
+                    link: 'https://vuejs.org/',
+                  },
+                  {
+                    display: 'jQuery',
+                  },
+                  {
+                    display: 'ASP.NET',
+                  },
+                  {
+                    display: 'C♯',
+                  },
+                ],
+              },
+              {
+                title: 'Web Development Intern',
+                subtitle: 'Apr 2011 – Aug 2011 | SnupNow, LLC',
+                tags: [
+                  {
+                    display: 'HTML',
+                  },
+                  {
+                    display: 'CSS',
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
     ],
   },
