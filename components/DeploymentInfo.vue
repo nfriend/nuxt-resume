@@ -36,11 +36,6 @@ export default {
   data: () => ({
     pipelineStatusUrl: '',
   }),
-  methods: {
-    refreshPipelineStatus() {
-      this.pipelineStatusUrl = `https://gitlab.com/nfriend/nuxt-resume/badges/master/pipeline.svg#${Date.now()}`;
-    },
-  },
   created() {
     this.isProduction = process.env.isProduction;
     this.deployedTimestamp = moment(process.env.gitlabCi.timestamp)
@@ -51,6 +46,11 @@ export default {
 
     setInterval(this.refreshPipelineStatus, 5000);
     this.refreshPipelineStatus();
+  },
+  methods: {
+    refreshPipelineStatus() {
+      this.pipelineStatusUrl = `https://gitlab.com/nfriend/nuxt-resume/badges/master/pipeline.svg#${Date.now()}`;
+    },
   },
 };
 </script>
