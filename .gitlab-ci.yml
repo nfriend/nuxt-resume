@@ -41,7 +41,7 @@ pdf:
     - ci/generate-pdf.sh
   artifacts:
     paths:
-      - '*.pdf'
+      - dist/*.pdf
 
 screenshot:
   stage: render
@@ -52,7 +52,7 @@ screenshot:
     - node ci/generate-screenshot.js
   artifacts:
     paths:
-      - '*.png'
+      - dist/*.png
 
 html proofer:
   stage: lint html
