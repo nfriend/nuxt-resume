@@ -71,4 +71,84 @@ export const resumeData = {
     'd',
   ],
   contactInfo,
+  content: {
+    columns: [
+      {
+        sections: [
+          {
+            title: 'Experience',
+            subsections: [
+              {
+                title: {
+                  display: 'GitLab',
+                  link: 'https://about.gitlab.com/',
+                },
+                subtitle: 'Dec 2018 – Present | Senior Frontend Engineer',
+                description:
+                  'Built doner pork chop • Served salmon, cream soft cheese, and brisket • Acted 55% pork chop • Filled burgdoggen & frankfurter strip steak with 90% burger patties and broth',
+                highlights: [
+                  'Built doner pork chop',
+                  'Served salmon, cream soft cheese, and brisket',
+                  'Acted 55% pork chop',
+                  'Filled burgdoggen & frankfurter strip steak with 90% burger patties and broth',
+                ],
+                tags: [
+                  {
+                    display: 'Vue.js',
+                    link: 'https://vuejs.org/',
+                  },
+                  {
+                    display: 'JavaScript',
+                    link: 'https://vuejs.org/',
+                  },
+                  {
+                    display: 'SCSS',
+                    link: 'https://sass-lang.com/',
+                  },
+                  {
+                    display: 'Ruby',
+                    link: 'https://www.ruby-lang.org/en/',
+                  },
+                ],
+              },
+              {
+                title: {
+                  display: 'DeltaWare',
+                  link: 'https://maximuscanada.ca/locations',
+                },
+                subtitle: 'Aug 2016 – Dec 2018 | Project Architect',
+                description:
+                  'Filet mignon burgdoggen tri-tip swine pork belly ham hock flank pork. Ribeye turducken pancetta sausage. Biltong atl. Bacon ham shankle, landjaeg pastrami beef',
+                highlights: [
+                  'Filet mignon burgdoggen tri-tip swine pork belly ham hock flank pork.',
+                  'Ribeye turducken pancetta sausage.',
+                ],
+                tags: [
+                  {
+                    display: 'Vue.js',
+                    link: 'https://vuejs.org/',
+                  },
+                  {
+                    display: 'JavaScript',
+                    link: 'https://vuejs.org/',
+                  },
+                  {
+                    display: 'SCSS',
+                    link: 'https://sass-lang.com/',
+                  },
+                  {
+                    display: 'Ruby',
+                    link: 'https://www.ruby-lang.org/en/',
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        /* column 2 goes here */
+      },
+    ],
+  },
 };
