@@ -94,3 +94,6 @@ resume-data.private.js
 
 # Bundler
 .bundle
+
+# Gems
+vendor/ruby
