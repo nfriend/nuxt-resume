@@ -48,7 +48,7 @@
               <Tag
                 v-for="(tag, tagIndex) in subsection.tags"
                 :key="tagIndex"
-                :link="tag.link"
+                :link="isString(tag.link) ? tag.link : undefined"
               >
                 {{ tag.display || tag }}
               </Tag>
