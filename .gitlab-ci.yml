@@ -52,7 +52,7 @@ screenshot:
     - node ci/generate-screenshot.js
   artifacts:
     paths:
-      - dist/*.png
+      - dist/screenshot.png
 
 html proofer:
   stage: lint html

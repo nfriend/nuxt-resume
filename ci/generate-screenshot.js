@@ -19,16 +19,9 @@ const puppeteer = require('puppeteer');
     waitUntil: 'networkidle0',
   });
 
-  const distDir = path.resolve(__dirname, '../dist');
-  if (!fs.existsSync(distDir)) {
-    fs.mkdirSync(distDir);
-  }
-
-  const screenshotPath = path.resolve(distDir, 'screenshot.png');
-
+  const screenshotPath = path.resolve(__dirname, '../dist/screenshot.png');
   // eslint-disable-next-line no-console
   console.log(`Writing screenshot to ${screenshotPath}`);
-
   await page.screenshot({ path: screenshotPath });
 
   browser.close();
