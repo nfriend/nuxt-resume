@@ -107,6 +107,14 @@ import yargs from 'yargs';
     return educationInfo;
   });
 
+  const skillsSection = findSection('Skills');
+  const skills = skillsSection.subsections
+    .filter(s => ['Languages', 'Frameworks', 'Concepts'].includes(s.title))
+    .map(s => ({
+      name: s.title,
+      keywords: s.tags.map(t => (_.isString(t) ? t : t.display)),
+    }));
+
   const resumeJson = {
     // Strangely, including the $schema property
     // causes jsonresume.org to throw errors
@@ -136,6 +144,7 @@ import yargs from 'yargs';
     },
     work,
     education,
+    skills,
     meta: data.meta,
   };
 
