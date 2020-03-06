@@ -70,7 +70,7 @@ html proofer:
     - ruby -v
     - bundle install -j $(nproc) --path vendor/ruby
   script:
-    - yarn html-lint
+    - ci/run-html-proofer.rb
   cache:
     key: ${CI_COMMIT_REF_SLUG}
     paths:
