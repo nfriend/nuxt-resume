@@ -314,4 +314,8 @@ export const resumeData = {
       },
     ],
   },
+
+  // Used only for resume.json generation.
+  // List of available themes here: https://jsonresume.org/themes/
+  meta: { theme: 'short' },
 };

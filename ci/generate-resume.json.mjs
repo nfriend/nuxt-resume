@@ -46,6 +46,7 @@ import yargs from 'yargs';
         region: locationData.region,
       },
     },
+    meta: data.meta,
   };
 
   const stringifiedResumeJson = JSON.stringify(resumeJson, null, 2);
