@@ -26,6 +26,91 @@ import yargs from 'yargs';
   const website = data.contactInfo.find(ci => ci.type === 'website').link;
   const locationData = data.contactInfo.find(ci => ci.type === 'location');
 
+  const linkedContactInfo = data.contactInfo.find(ci => ci.type === 'linkedin');
+  const linkedInProfile = {
+    network: 'LinkedIn',
+    username: linkedContactInfo.display,
+    url: linkedContactInfo.link,
+  };
+
+  const gitLabHubContactInfo = data.contactInfo.find(
+    ci => ci.type === 'gitlab+github',
+  );
+  const gitLabProfile = {
+    network: 'GitLab',
+    username: gitLabHubContactInfo.display,
+    url: gitLabHubContactInfo.links.gitlab,
+  };
+  const gitHubProfile = {
+    network: 'GitHub',
+    username: gitLabHubContactInfo.display,
+    url: gitLabHubContactInfo.links.github,
+  };
+
+  const stackOverflowContactInfo = data.contactInfo.find(
+    ci => ci.type === 'stackoverflow',
+  );
+  const stackOverflowProfile = {
+    network: 'Stack Overflow',
+    username: stackOverflowContactInfo.display,
+    url: stackOverflowContactInfo.link,
+  };
+
+  const twitterContactInfo = data.contactInfo.find(ci => ci.type === 'twitter');
+  const twitterProfile = {
+    network: 'Twitter',
+    username: twitterContactInfo.display,
+    url: twitterContactInfo.link,
+  };
+
+  const experienceSection = _.flatten(
+    data.content.columns.map(c => c.sections),
+  ).find(s => s.title === 'Experience');
+  const work = experienceSection.subsections.map(s => {
+    let workInfo = {
+      company: _.isString(s.title) ? s.title : s.title.display,
+      website: _.isString(s.title) ? undefined : s.title.link,
+      summary: s.description,
+      highlights: s.highlights,
+    };
+
+    if (s.subtitle && !_.isString(s.subtitle)) {
+      workInfo = {
+        ...workInfo,
+        position: s.subtitle.description,
+        startDate: s.subtitle.startDate,
+        endDate: s.subtitle.endDate,
+      };
+    }
+
+    return workInfo;
+  });
+
+  const educationSection = _.flatten(
+    data.content.columns.map(c => c.sections),
+  ).find(s => s.title === 'Education');
+  const education = educationSection.subsections.map(s => {
+    let educationInfo = {
+      institution: _.isString(s.title) ? s.title : s.title.display,
+      website: _.isString(s.title) ? undefined : s.title.link,
+      summary: s.description,
+      highlights: s.highlights,
+    };
+
+    if (s.subtitle && !_.isString(s.subtitle)) {
+      educationInfo = {
+        ...educationInfo,
+        area: s.subtitle.description,
+        startDate: s.subtitle.startDate,
+        endDate: s.subtitle.endDate,
+        area: s.subtitle.area,
+        studyType: s.subtitle.studyType,
+      };
+    }
+
+    return educationInfo;
+  });
+
   const resumeJson = {
     // Strangely, including the $schema property
     // causes jsonresume.org to throw errors
@@ -45,7 +130,16 @@ import yargs from 'yargs';
         countryCode: locationData.countryCode,
         region: locationData.region,
       },
+      profiles: [
+        gitLabProfile,
+        gitHubProfile,
+        linkedInProfile,
+        stackOverflowProfile,
+        twitterProfile,
+      ],
     },
+    work,
+    education,
     meta: data.meta,
   };
 

@@ -8,7 +8,7 @@
            pb-4
            not-italic"
   >
-    <template v-for="(item, index) in resumeData.contactInfo">
+    <template v-for="(item, index) in supportedContactInfo">
       <!-- Combined GitLab/GitHub info requires some special handling -->
       <span
         v-if="item.type === 'gitlab+github'"
@@ -38,7 +38,7 @@
 
       <!-- Don't append a separator to the last item  -->
       <span
-        v-if="index !== resumeData.contactInfo.length - 1"
+        v-if="index !== supportedContactInfo.length - 1"
         class="text-gray-600 mx-4 hidden lg:inline print:inline"
       >
         /
@@ -52,5 +52,23 @@ import Icon from '../utility/Icon';
 
 export default {
   components: { Icon },
+  computed: {
+    // filter out contact info types that aren't supported by this component
+    supportedContactInfo() {
+      const supportedTypes = [
+        'email',
+        'location',
+        'phone',
+        'linkedin',
+        'website',
+        'gitlab',
+        'github',
+        'gitlab+github',
+      ];
+      return this.resumeData.contactInfo.filter(ci =>
+        supportedTypes.includes(ci.type),
+      );
+    },
+  },
 };
 </script>

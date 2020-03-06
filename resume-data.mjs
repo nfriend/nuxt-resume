@@ -15,6 +15,19 @@ const contactInfo = [
     display: 'hello@nathanfriend.io',
     link: 'mailto:hello@nathanfriend.io',
   },
+
+  // Twitter and Stack Overflow are not currently displayed;
+  // only specified here for resume.json
+  {
+    type: 'twitter',
+    display: 'NathanAFriend',
+    link: 'https://twitter.com/NathanAFriend',
+  },
+  {
+    type: 'stackoverflow',
+    display: 'nathan-friend',
+    link: 'https://stackoverflow.com/cv/nathanfriend',
+  },
 ];
 
 const phoneInformationExists = Boolean(
@@ -93,7 +106,10 @@ export const resumeData = {
                   display: 'GitLab',
                   link: 'https://about.gitlab.com/',
                 },
-                subtitle: 'Dec 2018 – Present | Senior Frontend Engineer',
+                subtitle: {
+                  startDate: '2018-12-10',
+                  description: 'Senior Frontend Engineer',
+                },
                 description:
                   'Built doner pork chop • Served salmon, cream soft cheese, and brisket • Acted 55% pork chop • Filled burgdoggen & frankfurter strip steak with 90% burger patties and broth',
                 highlights: [
@@ -126,7 +142,11 @@ export const resumeData = {
                   display: 'DeltaWare',
                   link: 'https://maximuscanada.ca/locations',
                 },
-                subtitle: 'Aug 2016 – Dec 2018 | Project Architect',
+                subtitle: {
+                  startDate: '2016-08-03',
+                  endDate: '2018-12-05',
+                  description: 'Project Architect',
+                },
                 description:
                   'Filet mignon burgdoggen tri-tip swine pork belly ham hock flank pork. Ribeye turducken pancetta sausage. Biltong atl. Bacon ham shankle, landjaeg pastrami beef',
                 highlights: [
@@ -157,8 +177,11 @@ export const resumeData = {
                   display: 'DuPont Pioneer',
                   link: 'https://www.pioneer.com/us',
                 },
-                subtitle:
-                  'May 2013 – Jul 2016 | Software Development Specialist',
+                subtitle: {
+                  startDate: '2013-05-20',
+                  endDate: '2016-07-20',
+                  description: 'Software Development Specialist',
+                },
                 description:
                   'Built doner pork chop • Served salmon, cream soft cheese, and brisket • Acted 55% pork chop • Filet mignon burgdoggen tri-tip swine pork belly ham hock flank pork. Ribeye turducken pancetta sausage. Biltong atl. Bacon ham shankle, landjaeg pastrami beef.',
                 highlights: [
@@ -200,15 +223,32 @@ export const resumeData = {
                   display: 'Iowa State University',
                   link: 'https://www.iastate.edu/',
                 },
-                subtitle:
-                  "2016 – 2019 | Master's in Human-Computer Interaction",
+                subtitle: {
+                  startDate: '2016-08-01',
+                  endDate: '2019-08-15',
+                  dateFormat: 'YYYY',
+                  description: "Master's in Human-Computer Interaction",
+
+                  // Used only for resume.json generation.
+                  area: 'Human-Computer Interaction',
+                  studyType: 'Master',
+                },
               },
               {
                 title: {
                   display: 'Dordt University',
                   link: 'https://www.dordt.edu/',
                 },
-                subtitle: "2009 – 2013 | Bachelor's in Computer Science",
+                subtitle: {
+                  startDate: '2009-08-01',
+                  endDate: '2013-05-10',
+                  dateFormat: 'YYYY',
+                  description: "Bachelor's in Computer Science",
+
+                  // Used only for resume.json generation.
+                  area: 'Computer Science',
+                  studyType: 'Bachelor',
+                },
               },
             ],
           },

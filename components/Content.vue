@@ -23,7 +23,26 @@
               </span>
             </h3>
             <h4 v-if="subsection.subtitle" class="text-gray-700 mb-2">
-              {{ subsection.subtitle }}
+              <template v-if="isString(subsection.subtitle)">
+                {{ subsection.subtitle }}
+              </template>
+              <template v-else>
+                {{
+                  formatDate(
+                    subsection.subtitle.startDate,
+                    subsection.subtitle.dateFormat,
+                  )
+                }}
+                –
+                {{
+                  formatDate(
+                    subsection.subtitle.endDate,
+                    subsection.subtitle.dateFormat,
+                  )
+                }}
+                |
+                {{ subsection.subtitle.description }}
+              </template>
             </h4>
             <p v-if="subsection.description" class="mb-2">
               {{ subsection.description }}
@@ -67,6 +86,7 @@
 </template>
 
 <script>
+import moment from 'moment';
 import { isString } from 'lodash';
 import Tag from './Tag';
 import Icon from './utility/Icon';
@@ -75,6 +95,13 @@ export default {
   components: { Tag, Icon },
   methods: {
     isString,
+    formatDate(dateString, format = 'MMM YYYY') {
+      if (!dateString) {
+        return 'Present';
+      }
+
+      return moment(dateString).format(format);
+    },
   },
 };
 </script>
