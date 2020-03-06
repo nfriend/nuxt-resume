@@ -58,6 +58,15 @@ resume.json:
   stage: render
   script:
     - yarn resume.json --github-pat ${GITHUB_PAT} --gitlab-pat ${GITLAB_PAT}
+  except:
+    - schedules
+
+scheduled resume.json:
+  stage: render
+  script:
+    - yarn resume.json
+  only:
+    - schedules
 
 html proofer:
   stage: lint html
