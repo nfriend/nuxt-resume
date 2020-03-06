@@ -86,7 +86,7 @@ import yargs from 'yargs';
   if (gitlabPat) {
     const snippetId = 1948091;
     console.log(
-      `Updating the GitLab resume.json Snippet (https://gitlab.com/snippets/${1948091})...`,
+      `Updating the GitLab resume.json Snippet (https://gitlab.com/snippets/${snippetId})...`,
     );
     await request.put(`https://gitlab.com/api/v4/snippets/${snippetId}`, {
       json: true,
