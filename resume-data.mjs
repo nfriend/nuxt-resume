@@ -4,7 +4,7 @@
 // phone numbers) in this project's repo.
 let privateResumeData;
 try {
-  privateResumeData = require('./resume-data.private.js');
+  privateResumeData = require('./resume-data.private.mjs');
 } catch (err) {
   /* Leave privateResumeData undefined */
 }
@@ -12,13 +12,17 @@ try {
 const contactInfo = [
   {
     type: 'email',
-    display: ' hello@nathanfriend.io',
+    display: 'hello@nathanfriend.io',
     link: 'mailto:hello@nathanfriend.io',
   },
 ];
 
+const phoneInformationExists = Boolean(
+  privateResumeData && privateResumeData.phoneInfo,
+);
+
 // If we have phone information, add it here
-if (privateResumeData?.phoneInfo) {
+if (phoneInformationExists) {
   contactInfo.push(privateResumeData.phoneInfo);
 }
 
@@ -26,11 +30,16 @@ contactInfo.push({
   type: 'location',
   display: 'Woodstock, ON',
   link: 'https://goo.gl/maps/SWsAd7QpGtWYdVCE6',
+
+  // used only for resume.json generation
+  city: 'Woodstock',
+  countryCode: 'CA',
+  region: 'Ontario',
 });
 
 // If we _don't_ have phone information, add LinkedIn info instead. This is
 // because the contact section looks too empty with less than 5 items.
-if (!privateResumeData?.phoneInfo) {
+if (!phoneInformationExists) {
   contactInfo.push({
     type: 'linkedin',
     display: 'nfriend',
@@ -70,6 +79,7 @@ export const resumeData = {
     { character: 'n', letterSpacing: '-0.07em' },
     'd',
   ],
+  label: 'Software Engineer',
   contactInfo,
   content: {
     columns: [

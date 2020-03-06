@@ -1,5 +1,5 @@
 default:
-  image: node:latest
+  image: node:13
   before_script:
     - yarn
   cache:
@@ -35,7 +35,7 @@ pdf:
   stage: render
   image:
     name: zenika/alpine-chrome:latest
-    entrypoint: [""]
+    entrypoint: ['']
   before_script: []
   script:
     - ci/generate-pdf.sh
@@ -54,6 +54,11 @@ screenshot:
     paths:
       - dist/screenshot.png
 
+resume.json:
+  stage: render
+  script:
+    - yarn resume.json --github-pat ${GITHUB_PAT} --gitlab-pat ${GITLAB_PAT}
+
 html proofer:
   stage: lint html
   image: ruby:2.7
@@ -65,7 +70,7 @@ html proofer:
     - ruby -v
     - bundle install -j $(nproc) --path vendor/ruby
   script:
-    - ci/run-html-proofer.rb
+    - yarn html-lint
   cache:
     key: ${CI_COMMIT_REF_SLUG}
     paths:

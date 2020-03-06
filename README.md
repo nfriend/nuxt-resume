@@ -17,18 +17,42 @@ PDF](https://resume.nathanfriend.io/Nathan%20Friend%20-%20R%C3%A9sum%C3%A9.pdf))
 ## Data
 
 All of the content of this resume is sourced from
-[`resume-data.js`](./resume-data.js).
+[`resume-data.mjs`](./resume-data.mjs).
 
-Additionally, a `resume-data.private.js` file can be created alongside
-[`resume-data.js`](./resume-data.js). This file it `.gitignore`-ed; its contents
-will be merged into [`resume-data.js`](./resume-data.js) when building this
-résumé. This is used to protect personal info such as phone numbers and
-addresses.
+Additionally, a `resume-data.private.mjs` file can be created alongside
+[`resume-data.mjs`](./resume-data.mjs). This file it `.gitignore`-ed; its
+contents will be `require`'d in [`resume-data.mjs`](./resume-data.mjs) when
+building this résumé. This is used to protect personal info such as phone
+numbers and addresses.
+
+At the moment, the only data point stored inside this file is my phone number.
+
+This file should look something like this:
+
+```js
+export const phoneInfo = {
+  type: 'phone',
+  display: '123.456.7890',
+  link: 'tel:123-456-7890',
+};
+```
 
 ## Inspiration
 
-This project was heavily inspired by the [Universal Résumé
+This project's visual style was heavily inspired by the [Universal Résumé
 Template](https://universal-resume-pages.netlify.com/).
+
+## resume.json
+
+As part of the CI pipeline, a `resume.json` file that conforms to the
+[`resume.json` schema](https://jsonresume.org/schema/) is extracted from
+[`resume-data.mjs`](./resume-data.mjs) and automatically pushed to a [GitLab
+Snippet](https://gitlab.com/snippets/1948091) and a [GitHub
+Gist](https://gist.github.com/nfriend/36d83b1526df75a663d9c3ad0b1cd630). The
+[`ci/generate-resume.json.mjs`](./ci/generate-resume.json.mjs) script is
+responsible for this work.
+
+You can view the rendered result at https://registry.jsonresume.org/nfriend.
 
 ## Build Setup
 
@@ -52,8 +76,8 @@ For other useful commands, check out the `scripts` defined in
 
 ### HTML linting
 
-One `yarn` script in particular - `yarn html-lint` - requires some setup before it
-will run:
+One `yarn` script in particular - `yarn html-lint` - requires some setup before
+it will run:
 
 - Install [Ruby](https://www.ruby-lang.org/en/)
 - Install [Bundler](https://bundler.io/)
