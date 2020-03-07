@@ -137,8 +137,16 @@ export const resumeData = {
                     link: 'https://sass-lang.com/',
                   },
                   {
+                    display: 'Haml',
+                    link: 'http://haml.info/',
+                  },
+                  {
                     display: 'Ruby',
                     link: 'https://www.ruby-lang.org/',
+                  },
+                  {
+                    display: 'Rails',
+                    link: 'https://rubyonrails.org/',
                   },
                 ],
               },
@@ -153,27 +161,38 @@ export const resumeData = {
                   description: 'Project Architect',
                 },
                 description:
-                  'Filet mignon burgdoggen tri-tip swine pork belly ham hock flank pork. Ribeye turducken pancetta sausage. Biltong atl. Bacon ham shankle, landjaeg pastrami beef',
+                  'As a project architect, I led efforts to move healthcare software from legacy desktop platforms to modern web frameworks.',
                 highlights: [
-                  'Filet mignon burgdoggen tri-tip swine pork belly ham hock flank pork.',
-                  'Ribeye turducken pancetta sausage.',
+                  'Led AngularJS to Angular 2+ conversion effort',
+                  'Implemented fast, intuitive searching using Solr',
+                  'Assisted in hiring and mentoring',
+                  'Pushed for best practices such as continuous deployment (CI), code reviews, UX/UI mockups, open source participation, and documentation',
+                  'Worked directly with clients to capture requirements',
                 ],
                 tags: [
                   {
-                    display: 'Vue.js',
-                    link: 'https://vuejs.org/',
+                    display: 'Angular',
+                    link: 'https://angular.io/',
                   },
                   {
-                    display: 'JavaScript',
-                    link: 'https://vuejs.org/',
+                    display: 'TypeScript',
+                    link: 'http://www.typescriptlang.org/',
                   },
                   {
-                    display: 'SCSS',
+                    display: 'Solr',
+                    link: 'https://lucene.apache.org/solr/',
+                  },
+                  {
+                    display: 'Node',
                     link: 'https://sass-lang.com/',
                   },
                   {
-                    display: 'Ruby',
-                    link: 'https://www.ruby-lang.org/en/',
+                    display: 'ASP.NET',
+                    link: 'https://www.asp.net/',
+                  },
+                  {
+                    display: 'Oracle',
+                    link: 'https://www.oracle.com/',
                   },
                 ],
               },
@@ -188,29 +207,39 @@ export const resumeData = {
                   description: 'Software Development Specialist',
                 },
                 description:
-                  'Built doner pork chop • Served salmon, cream soft cheese, and brisket • Acted 55% pork chop • Filet mignon burgdoggen tri-tip swine pork belly ham hock flank pork. Ribeye turducken pancetta sausage. Biltong atl. Bacon ham shankle, landjaeg pastrami beef.',
+                  'I designed a modular frontend system to allow multiple frontend teams to build independent web application that were stiched into a unified experience for savvy farmers.',
                 highlights: [
-                  'Filet mignon burgdoggen tri-tip swine pork belly ham hock flank pork.',
-                  'Served salmon, cream soft cheese, and brisket',
-                  'Acted 55% pork chop',
-                  'Filled burgdoggen & frankfurter strip steak with 90% burger patties and broth',
+                  'Built mapping features using Leaflet and Bing Maps',
+                  'Rebuilt Gulp builds to maximize developer efficiency',
+                  'Implemented an automated TypeScript unit testing framework using PhantomJS, Karma, and Jasmine',
+                  'Enforced coding standards using NDepend and TSLint',
                 ],
                 tags: [
                   {
-                    display: 'Vue.js',
-                    link: 'https://vuejs.org/',
+                    display: 'Angular',
+                    link: 'https://angular.io/',
                   },
                   {
-                    display: 'JavaScript',
-                    link: 'https://vuejs.org/',
+                    display: 'Knockout',
+                    link: 'https://knockoutjs.com/',
                   },
                   {
-                    display: 'SCSS',
-                    link: 'https://sass-lang.com/',
+                    display: 'TypeScript',
+                    link: 'http://www.typescriptlang.org/',
                   },
                   {
-                    display: 'Ruby',
-                    link: 'https://www.ruby-lang.org/en/',
+                    display: 'ASP.NET',
+                    link: 'https://www.asp.net/',
+                  },
+                  {
+                    display: 'WPF',
+                    link:
+                      'https://en.wikipedia.org/wiki/Windows_Presentation_Foundation',
+                  },
+                  {
+                    display: 'C♯',
+                    link:
+                      'https://en.wikipedia.org/wiki/C_Sharp_(programming_language)',
                   },
                 ],
               },
@@ -281,6 +310,10 @@ export const resumeData = {
                     link: 'https://www.ruby-lang.org/en/',
                   },
                   {
+                    display: 'SCSS',
+                    link: 'https://sass-lang.com/',
+                  },
+                  {
                     display: 'SQL',
                     link: 'https://en.wikipedia.org/wiki/SQL',
                   },
@@ -293,25 +326,41 @@ export const resumeData = {
                     display: 'Vue.js',
                     link: 'https://vuejs.org/',
                   },
-                  'Angular',
-                  'React',
-                  'ASP.NET',
-                  'Rails',
+                  {
+                    display: 'Angular',
+                    link: 'https://angular.io/',
+                  },
+                  {
+                    display: 'React',
+                    link: 'https://reactjs.org/',
+                  },
+                  {
+                    display: 'ASP.NET',
+                    link: 'https://www.asp.net/',
+                  },
+                  {
+                    display: 'WPF',
+                    link:
+                      'https://en.wikipedia.org/wiki/Windows_Presentation_Foundation',
+                  },
+                  {
+                    display: 'Rails',
+                    link: 'https://rubyonrails.org/',
+                  },
                 ],
               },
               {
                 title: 'Concepts',
                 tags: [
-                  'Single Page Applications (SPAs)',
-                  'Internationalization (i18n)',
-                  'Web analytics',
-                  'Unit testing',
-                  'Continuous deployment',
-                  'User experience testing',
+                  'Continuous integration/deployment',
+                  'Automated testing',
+                  'User experience design',
                   'REST API design',
                   'Cross-browser debugging',
                   'Responsive design',
                   'Developer workflow optimization',
+                  'Single Page Applications (SPAs)',
+                  'Internationalization (i18n)',
                 ],
               },
             ],
