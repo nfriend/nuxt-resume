@@ -5,6 +5,13 @@ import request from 'request-promise';
 import _ from 'lodash';
 import md5 from 'md5';
 import yargs from 'yargs';
+import Ajv from 'ajv';
+import fs from 'fs';
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+// Construct __dirname, which points to the directory this script is in
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 (async () => {
   const { githubPat, gitlabPat } = yargs
@@ -153,8 +160,21 @@ import yargs from 'yargs';
   console.log('Transformed resume data into the following resume.json format:');
   console.log(stringifiedResumeJson);
 
+  console.log('Validating JSON...');
+  const errors = await validateResumeJson(resumeJson);
+  if (!errors) {
+    console.log('Resume.json is valid ✅');
+  } else {
+    console.log('Resume.json is not valid! ❌');
+    console.log(errors);
+  }
+
   if (githubPat) {
-    updateGitHubGist({ pat: githubPat, stringifiedResumeJson });
+    const gistId = '36d83b1526df75a663d9c3ad0b1cd630';
+    console.log(
+      `Updating the GitHub resume.json Gist (https://gist.github.com/nfriend/${gistId})...`,
+    );
+    updateGitHubGist({ pat: githubPat, gistId, stringifiedResumeJson });
   } else {
     console.log(
       'No GitHub PAT was provided, so skipping the Gist update.',
@@ -163,7 +183,11 @@ import yargs from 'yargs';
   }
 
   if (gitlabPat) {
-    updateGitLabSnippet({ pat: gitlabPat, stringifiedResumeJson });
+    const snippetId = '1948091';
+    console.log(
+      `Updating the GitLab resume.json Snippet (https://gitlab.com/snippets/${snippetId})...`,
+    );
+    updateGitLabSnippet({ pat: gitlabPat, snippetId, stringifiedResumeJson });
   } else {
     console.log(
       'No GitLab PAT was provided, so skipping the Snippet update.',
@@ -183,17 +207,53 @@ function findSection(sectionTitle) {
 }
 
 /**
+ * Validates the resume.json adheres to the JSON schema
+ * @param {Object} resumeJson The resume.json data to validate
+ * @returns An array of error objects, or null if the data is valid
+ */
+async function validateResumeJson(resumeJson) {
+  const schema = await request.get({
+    url: 'http://json.schemastore.org/resume',
+    json: true,
+    headers: { Accept: '*/*' },
+  });
+
+  // Options provided allow draft-04 schema support
+  // See https://github.com/epoberezkin/ajv/releases/tag/5.0.0
+  const ajv = new Ajv({
+    schemaId: 'id',
+    meta: false,
+    extendRefs: true,
+    unknownFormats: 'ignore',
+    missingRefs: 'ignore',
+  });
+
+  // No require() in .mjs files :(
+  const metaSchema = JSON.parse(
+    fs.readFileSync(
+      path.resolve(
+        __dirname,
+        '../node_modules/ajv/lib/refs/json-schema-draft-04.json',
+      ),
+    ),
+  );
+
+  ajv.addMetaSchema(metaSchema);
+
+  const validate = await ajv.compile(schema);
+  validate(resumeJson);
+  return validate.errors;
+}
+
+/**
  * Updates the GitLab resume.json Snippet
  * @param {Object} snippetInfo
  * @param {String} snippetInfo.pat A GitLab PAT with API scope
  * @param {String} snippetInfo.stringifiedResumeJson The contents of resume.json, stringified
  */
-async function updateGitLabSnippet({ pat, stringifiedResumeJson }) {
-  const snippetId = 1948091;
-  console.log(
-    `Updating the GitLab resume.json Snippet (https://gitlab.com/snippets/${snippetId})...`,
-  );
-  await request.put(`https://gitlab.com/api/v4/snippets/${snippetId}`, {
+async function updateGitLabSnippet({ pat, snippetId, stringifiedResumeJson }) {
+  await request.put({
+    url: `https://gitlab.com/api/v4/snippets/${snippetId}`,
     json: true,
     body: {
       id: snippetId,
@@ -216,12 +276,9 @@ async function updateGitLabSnippet({ pat, stringifiedResumeJson }) {
  * @param {String} snippetInfo.pat A GitHub PAT with Gist scope
  * @param {String} snippetInfo.stringifiedResumeJson The contents of resume.json, stringified
  */
-async function updateGitHubGist({ pat, stringifiedResumeJson }) {
-  const gistId = '36d83b1526df75a663d9c3ad0b1cd630';
-  console.log(
-    `Updating the GitHub resume.json Gist (https://gist.github.com/nfriend/${gistId})...`,
-  );
-  await request.patch(`https://nfriend:${pat}@api.github.com/gists/${gistId}`, {
+async function updateGitHubGist({ pat, gistId, stringifiedResumeJson }) {
+  await request.patch({
+    url: `https://nfriend:${pat}@api.github.com/gists/${gistId}`,
     json: true,
     body: {
       description:
