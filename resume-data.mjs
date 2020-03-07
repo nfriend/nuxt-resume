@@ -109,19 +109,18 @@ export const resumeData = {
               {
                 title: {
                   display: 'GitLab',
-                  link: 'https://about.gitlab.com/',
+                  link: 'https://about.gitlab.com',
                 },
                 subtitle: {
                   startDate: '2018-12-10',
                   description: 'Senior Frontend Engineer',
                 },
                 description:
-                  'Built doner pork chop • Served salmon, cream soft cheese, and brisket • Acted 55% pork chop • Filled burgdoggen & frankfurter strip steak with 90% burger patties and broth',
+                  'As a senior engineer on the Release team, I build features that help people release software more quickly, easily, and effectively.',
                 highlights: [
-                  'Built doner pork chop',
-                  'Served salmon, cream soft cheese, and brisket',
-                  'Acted 55% pork chop',
-                  'Filled burgdoggen & frankfurter strip steak with 90% burger patties and broth',
+                  "Implemented high-profile features such as [Let's Encrypt integration](https://gitlab.com/gitlab-org/gitlab-foss/-/issues/28996), merge trains, and deploy freezes",
+                  'Pushed Release vision forward through in-depth technical and business analysis',
+                  'Performed technical interviews',
                 ],
                 tags: [
                   {
@@ -130,7 +129,8 @@ export const resumeData = {
                   },
                   {
                     display: 'JavaScript',
-                    link: 'https://vuejs.org/',
+                    link:
+                      'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
                   },
                   {
                     display: 'SCSS',
@@ -138,7 +138,7 @@ export const resumeData = {
                   },
                   {
                     display: 'Ruby',
-                    link: 'https://www.ruby-lang.org/en/',
+                    link: 'https://www.ruby-lang.org/',
                   },
                 ],
               },
