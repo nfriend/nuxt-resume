@@ -18,5 +18,6 @@ module.exports = {
   // add your custom rules here
   rules: {
     'vue/require-v-for-key': 0,
+    'vue/no-v-html': 0,
   },
 };

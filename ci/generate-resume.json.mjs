@@ -7,6 +7,7 @@ import md5 from 'md5';
 import yargs from 'yargs';
 import Ajv from 'ajv';
 import fs from 'fs';
+import removeMd from 'remove-markdown';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -80,8 +81,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
     let workInfo = {
       company: _.isString(s.title) ? s.title : s.title.display,
       website: _.isString(s.title) ? undefined : s.title.link,
-      summary: s.description,
-      highlights: s.highlights,
+      summary: removeMd(s.description),
+      highlights: s.highlights ? s.highlights.map(h => removeMd(h)) : undefined,
     };
 
     if (s.subtitle && !_.isString(s.subtitle)) {
@@ -101,8 +102,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
     let educationInfo = {
       institution: _.isString(s.title) ? s.title : s.title.display,
       website: _.isString(s.title) ? undefined : s.title.link,
-      summary: s.description,
-      highlights: s.highlights,
+      summary: removeMd(s.description),
+      highlights: s.highlights ? s.highlights.map(h => removeMd(h)) : undefined,
     };
 
     if (s.subtitle && !_.isString(s.subtitle)) {

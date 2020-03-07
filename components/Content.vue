@@ -44,9 +44,11 @@
                 {{ subsection.subtitle.description }}
               </template>
             </h4>
-            <p v-if="subsection.description" class="mb-2">
-              {{ subsection.description }}
-            </p>
+            <div
+              v-if="subsection.description"
+              class="mb-2"
+              v-html="showdown(subsection.description)"
+            ></div>
             <ul v-if="subsection.highlights && subsection.highlights.length">
               <li
                 v-for="(highlight, highlightIndex) in subsection.highlights"
@@ -57,7 +59,7 @@
                   type="check"
                   class="mr-1 mt-1 text-gray-600 flex-shrink-0"
                 />
-                {{ highlight }}
+                <div v-html="showdown(highlight)"></div>
               </li>
             </ul>
             <section
@@ -88,8 +90,11 @@
 <script>
 import moment from 'moment';
 import { isString } from 'lodash';
+import { Converter as ShowdownConverter } from 'showdown';
 import Tag from './Tag';
 import Icon from './utility/Icon';
+
+const showdown = new ShowdownConverter();
 
 export default {
   components: { Tag, Icon },
@@ -101,6 +106,9 @@ export default {
       }
 
       return moment(dateString).format(format);
+    },
+    showdown(markdown) {
+      return showdown.makeHtml(markdown);
     },
   },
 };
