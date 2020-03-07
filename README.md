@@ -93,3 +93,8 @@ still valid.
 
 For detailed explanation on how things work, check out [Nuxt.js
 docs](https://nuxtjs.org).
+
+## Attributions
+
+Icons were sourced from [Font Awesome](https://fontawesome.com/)
+([license](https://fontawesome.com/license)). No changes were made to the icons.
