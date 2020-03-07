@@ -1,5 +1,5 @@
 <template>
-  <div class="flex mt-4 text-justify flex-col md:flex-row print:flex-row">
+  <div class="flex mt-4 flex-col md:flex-row print:flex-row">
     <template v-for="(column, columnIndex) in resumeData.content.columns">
       <div class="flex-1">
         <section
