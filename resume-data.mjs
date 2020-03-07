@@ -118,7 +118,7 @@ export const resumeData = {
                 description:
                   'As a senior engineer on the Release team, I build features that help people release software more quickly, easily, and effectively.',
                 highlights: [
-                  "Implemented high-profile features such as [Let's Encrypt integration](https://gitlab.com/gitlab-org/gitlab-foss/-/issues/28996), merge trains, and deploy freezes",
+                  "Implemented high-profile features such as [Let's Encrypt integration](https://docs.gitlab.com/omnibus/settings/ssl.html#lets-encrypt-integration), [merge trains](https://docs.gitlab.com/ee/ci/merge_request_pipelines/pipelines_for_merged_results/merge_trains/), and [deploy freezes](https://gitlab.com/gitlab-org/gitlab/issues/24295)",
                   'Pushed Release vision forward through in-depth technical and business analysis',
                   'Performed technical interviews',
                 ],
