@@ -131,6 +131,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
         ? data.title
         : data.title.map(c => (_.isString(c) ? c : c.character)).join(''),
       label: data.label,
+      summary: data.summary,
       picture: `https://secure.gravatar.com/avatar/${md5(
         email,
       )}?s=800&d=robohash`,

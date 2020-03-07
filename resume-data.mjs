@@ -92,7 +92,12 @@ export const resumeData = {
     { character: 'n', letterSpacing: '-0.07em' },
     'd',
   ],
+
+  // Used only for resume.json generation.
   label: 'Software Engineer',
+  summary:
+    'Senior Frontend Engineer at GitLab and cellist based out of Woodstock, Ontario. Fascinated with building usable, delightful software.',
+
   contactInfo,
   content: {
     columns: [
