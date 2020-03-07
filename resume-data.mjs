@@ -320,8 +320,12 @@ export const resumeData = {
             title: 'Internships/Part-time',
             subsections: [
               {
-                title: 'UX Development Intern',
-                subtitle: 'Jan 2013 – May 2013 | Visual Logic Group',
+                title: 'Visual Logic Group',
+                subtitle: {
+                  startDate: '2013-01-15',
+                  endDate: '2013-05-01',
+                  description: 'UX Development Intern',
+                },
                 tags: [
                   {
                     display: 'JavaScript',
@@ -331,13 +335,21 @@ export const resumeData = {
                 ],
               },
               {
-                title: 'Web Developer',
-                subtitle: 'Jan 2012 – May 2013 | Dordt College',
+                title: 'Dordt College',
+                subtitle: {
+                  startDate: '2012-01-20',
+                  endDate: '2013-05-10',
+                  description: 'Web Developer',
+                },
                 tags: ['Perl', 'PHP', 'Drupal'],
               },
               {
-                title: 'Software Development Intern',
-                subtitle: 'May 2012 – Aug 2012 | DuPont Pioneer',
+                title: 'DuPont Pioneer',
+                subtitle: {
+                  startDate: '2012-05-20',
+                  endDate: '2012-08-05',
+                  description: 'Software Development Intern',
+                },
                 tags: [
                   {
                     display: 'JavaScript',
@@ -349,8 +361,12 @@ export const resumeData = {
                 ],
               },
               {
-                title: 'Web Development Intern',
-                subtitle: 'Apr 2011 – Aug 2011 | SnupNow, LLC',
+                title: 'SnupNow, LLC',
+                subtitle: {
+                  startDate: '2011-04-15',
+                  endDate: '2011-08-05',
+                  description: 'Web Development Intern',
+                },
                 tags: ['HTML', 'CSS'],
               },
             ],

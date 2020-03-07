@@ -71,7 +71,12 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
   };
 
   const experienceSection = findSection('Experience');
-  const work = experienceSection.subsections.map(s => {
+  const internshipsSection = findSection('Internships/Part-time');
+  const workSubsections = [
+    ...experienceSection.subsections,
+    ...internshipsSection.subsections,
+  ];
+  const work = workSubsections.map(s => {
     let workInfo = {
       company: _.isString(s.title) ? s.title : s.title.display,
       website: _.isString(s.title) ? undefined : s.title.link,
