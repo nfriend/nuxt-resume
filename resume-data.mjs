@@ -369,7 +369,10 @@ export const resumeData = {
             title: 'Internships/Part-time',
             subsections: [
               {
-                title: 'Visual Logic Group',
+                title: {
+                  display: 'Visual Logic Group',
+                  link: 'https://vlgux.com/',
+                },
                 subtitle: {
                   startDate: '2013-01-15',
                   endDate: '2013-05-01',
@@ -384,7 +387,10 @@ export const resumeData = {
                 ],
               },
               {
-                title: 'Dordt College',
+                title: {
+                  display: 'Dordt University',
+                  link: 'https://www.dordt.edu/',
+                },
                 subtitle: {
                   startDate: '2012-01-20',
                   endDate: '2013-05-10',
@@ -393,7 +399,10 @@ export const resumeData = {
                 tags: ['Perl', 'PHP', 'Drupal'],
               },
               {
-                title: 'DuPont Pioneer',
+                title: {
+                  display: 'DuPont Pioneer',
+                  link: 'https://www.pioneer.com/us',
+                },
                 subtitle: {
                   startDate: '2012-05-20',
                   endDate: '2012-08-05',
