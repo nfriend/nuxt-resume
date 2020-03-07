@@ -138,7 +138,7 @@ export const resumeData = {
                   },
                   {
                     display: 'Haml',
-                    link: 'http://haml.info/',
+                    link: 'https://github.com/haml/haml',
                   },
                   {
                     display: 'Ruby',
@@ -176,7 +176,7 @@ export const resumeData = {
                   },
                   {
                     display: 'TypeScript',
-                    link: 'http://www.typescriptlang.org/',
+                    link: 'https://www.typescriptlang.org/',
                   },
                   {
                     display: 'Solr',
@@ -225,7 +225,7 @@ export const resumeData = {
                   },
                   {
                     display: 'TypeScript',
-                    link: 'http://www.typescriptlang.org/',
+                    link: 'https://www.typescriptlang.org/',
                   },
                   {
                     display: 'ASP.NET',
