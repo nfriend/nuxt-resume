@@ -295,7 +295,8 @@ export const resumeData = {
                 tags: [
                   {
                     display: 'JavaScript',
-                    link: 'https://vuejs.org/',
+                    link:
+                      'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
                   },
                   {
                     display: 'TypeScript',
@@ -381,9 +382,13 @@ export const resumeData = {
                 tags: [
                   {
                     display: 'JavaScript',
-                    link: 'https://vuejs.org/',
+                    link:
+                      'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
                   },
-                  'CSS',
+                  {
+                    display: 'CSS',
+                    link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
+                  },
                 ],
               },
               {
@@ -396,7 +401,20 @@ export const resumeData = {
                   endDate: '2013-05-10',
                   description: 'Web Developer',
                 },
-                tags: ['Perl', 'PHP', 'Drupal'],
+                tags: [
+                  {
+                    display: 'Perl',
+                    link: 'https://www.perl.org/',
+                  },
+                  {
+                    display: 'PHP',
+                    link: 'https://www.php.net/',
+                  },
+                  {
+                    display: 'Drupal',
+                    link: 'https://www.drupal.org/',
+                  },
+                ],
               },
               {
                 title: {
