@@ -208,7 +208,7 @@ export const resumeData = {
                   description: 'Software Development Specialist',
                 },
                 description:
-                  'I designed a modular frontend system to allow multiple frontend teams to build independent web application that were stiched into a unified experience for savvy farmers.',
+                  'I designed a modular frontend system that allowed multiple teams to independently build a web application used by farmers to optimize fertilizer usage.',
                 highlights: [
                   'Built mapping features using Leaflet and Bing Maps',
                   'Rebuilt Gulp builds to maximize developer efficiency',
