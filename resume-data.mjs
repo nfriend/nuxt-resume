@@ -116,11 +116,12 @@ export const resumeData = {
                   description: 'Senior Frontend Engineer',
                 },
                 description:
-                  'As a senior engineer on the Release team, I build features that help people release software more quickly, easily, and effectively.',
+                  'I build features that help people release software more quickly, easily, and effectively.',
                 highlights: [
                   "Implemented high-profile features such as [Let's Encrypt integration](https://docs.gitlab.com/omnibus/settings/ssl.html#lets-encrypt-integration), [merge trains](https://docs.gitlab.com/ee/ci/merge_request_pipelines/pipelines_for_merged_results/merge_trains/), and [deploy freezes](https://gitlab.com/gitlab-org/gitlab/issues/24295)",
                   'Pushed Release vision forward through in-depth technical and business analysis',
                   'Performed technical interviews',
+                  'Reviewed and guided community contributions',
                 ],
                 tags: [
                   {
@@ -161,9 +162,9 @@ export const resumeData = {
                   description: 'Project Architect',
                 },
                 description:
-                  'As a project architect, I led efforts to move healthcare software from legacy desktop platforms to modern web frameworks.',
+                  'I led efforts to rebuild legacy healthcare software as modern web applications with an emphasis on maintainability and usability.',
                 highlights: [
-                  'Led AngularJS to Angular 2+ conversion effort',
+                  'Led AngularJS to Angular 2+ conversion',
                   'Implemented fast, intuitive searching using Solr',
                   'Assisted in hiring and mentoring',
                   'Pushed for best practices such as continuous deployment (CI), code reviews, UX/UI mockups, open source participation, and documentation',
@@ -352,9 +353,8 @@ export const resumeData = {
               {
                 title: 'Concepts',
                 tags: [
-                  'Continuous integration/deployment',
+                  'Continuous integration/deployment (CI/CD)',
                   'Automated testing',
-                  'User experience design',
                   'REST API design',
                   'Cross-browser debugging',
                   'Responsive design',
@@ -413,9 +413,19 @@ export const resumeData = {
                     display: 'JavaScript',
                     link: 'https://vuejs.org/',
                   },
-                  'jQuery',
-                  'ASP.NET',
-                  'C♯',
+                  {
+                    display: 'jQuery',
+                    link: 'https://jquery.com/',
+                  },
+                  {
+                    display: 'ASP.NET',
+                    link: 'https://www.asp.net/',
+                  },
+                  {
+                    display: 'C♯',
+                    link:
+                      'https://en.wikipedia.org/wiki/C_Sharp_(programming_language)',
+                  },
                 ],
               },
               {
@@ -425,7 +435,16 @@ export const resumeData = {
                   endDate: '2011-08-05',
                   description: 'Web Development Intern',
                 },
-                tags: ['HTML', 'CSS'],
+                tags: [
+                  {
+                    display: 'HTML',
+                    link: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
+                  },
+                  {
+                    display: 'CSS',
+                    link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
+                  },
+                ],
               },
             ],
           },
