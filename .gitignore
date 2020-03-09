@@ -90,7 +90,7 @@ sw.*
 *.swp
 
 # Private resume data
-resume-data.private.*js
+resume-data.private.*
 
 # Bundler
 .bundle
