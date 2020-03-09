@@ -19,14 +19,15 @@ PDF](https://resume.nathanfriend.io/Nathan%20Friend%20-%20R%C3%A9sum%C3%A9.pdf))
 All of the content of this resume is sourced from
 [`resume-data.json`](./resume-data.json). This file loosely adheres to the
 [`resume.json` schema](https://jsonresume.org/schema/) (with some additional
-properties for display purposes). See the [resume.json](#resume.json) section
+properties for display purposes). See the [resume.json](#resumejson) section
 below for more info about `resume.json` compatibility.
 
 Additionally, a `resume-data.private.json` file can be created alongside
 [`resume-data.json`](./resume-data.json). This file it `.gitignore`-ed; its
 contents will be merged into [`resume-data.json`](./resume-data.json) when
 building this résumé. This is used to protect personal info such as phone
-numbers and addresses.
+numbers and addresses, while still allowing this data to appear in
+locally-generated résumés.
 
 ## Inspiration
 
