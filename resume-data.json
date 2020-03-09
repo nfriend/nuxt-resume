@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Nathan Friend",
-    "name_kerned": [
+    "nameKerned": [
       { "character": "N", "letterSpacing": "-0.08em" },
       { "character": "a", "letterSpacing": "-0.07em" },
       { "character": "t", "letterSpacing": "-0.01em" },

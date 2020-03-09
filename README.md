@@ -37,10 +37,10 @@ Template](https://universal-resume-pages.netlify.com/).
 
 As part of the CI pipeline, a `resume.json` file that conforms to the
 [`resume.json` schema](https://jsonresume.org/schema/) is extracted from
-[`resume-data.mjs`](./resume-data.mjs) and automatically pushed to a [GitLab
+[`resume-data.json`](./resume-data.json) and automatically pushed to a [GitLab
 Snippet](https://gitlab.com/snippets/1948091) and a [GitHub
 Gist](https://gist.github.com/nfriend/36d83b1526df75a663d9c3ad0b1cd630). The
-[`ci/generate-resume.json.mjs`](./ci/generate-resume.json.mjs) script is
+[`ci/generate-resume.json.js`](./ci/generate-resume.json.js) script is
 responsible for this work.
 
 You can view the rendered result at https://registry.jsonresume.org/nfriend.

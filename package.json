@@ -14,7 +14,7 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint:fix": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
     "html-lint": "ci/run-html-proofer.rb",
-    "resume.json": "ci/generate-resume.json.mjs"
+    "resume.json": "ci/generate-resume.json.js"
   },
   "dependencies": {
     "lodash": "^4.17.15",

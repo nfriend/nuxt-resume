@@ -3,7 +3,7 @@
     <div class="flex items-stretch sm:items-start flex-col-reverse sm:flex-row">
       <h1 class="flex-grow flex-shrink-0 text-center sm:text-left">
         <Kerned
-          :letters="resumeData.basics.name_kerned || resumeData.basics.name"
+          :letters="resumeData.basics.nameKerned || resumeData.basics.name"
         />
       </h1>
       <PdfLink />

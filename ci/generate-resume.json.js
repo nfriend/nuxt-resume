@@ -1,23 +1,19 @@
-#!/usr/bin/env node
+#!/usr/bin/env node?
+/* eslint-disable no-console */
 
-import { resumeData as data } from '../resume-data.mjs';
-import request from 'request-promise';
-import _ from 'lodash';
-import md5 from 'md5';
-import yargs from 'yargs';
-import Ajv from 'ajv';
-import fs from 'fs';
-import removeMd from 'remove-markdown';
-import path, { dirname } from 'path';
-import { fileURLToPath } from 'url';
+const path = require('path');
+const request = require('request-promise');
+const _ = require('lodash');
+const yargs = require('yargs');
+const Ajv = require('ajv');
+const removeMd = require('remove-markdown');
 
-// Construct __dirname, which points to the directory this script is in
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const data = require(path.resolve(__dirname, '../resume-data.json'));
 
 (async () => {
   const { githubPat, gitlabPat } = yargs
     .usage(
-      'Usage: generate-resume.json.mjs --github-pat <pat> --gitlab-pat <pat>',
+      'Usage: generate-resume.json.js --github-pat <pat> --gitlab-pat <pat>',
     )
     .alias('h', 'github-pat')
     .describe(
@@ -29,47 +25,6 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
       'gitlab-pat',
       'A GitLab PAT with "api" scope. If not provided, the Snippet will not be updated.',
     ).argv;
-
-  const email = data.contactInfo.find(ci => ci.type === 'email').display;
-  const website = data.contactInfo.find(ci => ci.type === 'website').link;
-  const locationData = data.contactInfo.find(ci => ci.type === 'location');
-
-  const linkedContactInfo = data.contactInfo.find(ci => ci.type === 'linkedin');
-  const linkedInProfile = {
-    network: 'LinkedIn',
-    username: linkedContactInfo.display,
-    url: linkedContactInfo.link,
-  };
-
-  const gitLabHubContactInfo = data.contactInfo.find(
-    ci => ci.type === 'gitlab+github',
-  );
-  const gitLabProfile = {
-    network: 'GitLab',
-    username: gitLabHubContactInfo.display,
-    url: gitLabHubContactInfo.links.gitlab,
-  };
-  const gitHubProfile = {
-    network: 'GitHub',
-    username: gitLabHubContactInfo.display,
-    url: gitLabHubContactInfo.links.github,
-  };
-
-  const stackOverflowContactInfo = data.contactInfo.find(
-    ci => ci.type === 'stackoverflow',
-  );
-  const stackOverflowProfile = {
-    network: 'Stack Overflow',
-    username: stackOverflowContactInfo.display,
-    url: stackOverflowContactInfo.link,
-  };
-
-  const twitterContactInfo = data.contactInfo.find(ci => ci.type === 'twitter');
-  const twitterProfile = {
-    network: 'Twitter',
-    username: twitterContactInfo.display,
-    url: twitterContactInfo.link,
-  };
 
   const experienceSection = findSection('Experience');
   const internshipsSection = findSection('Internships/Part-time');
@@ -102,14 +57,13 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
     let educationInfo = {
       institution: _.isString(s.title) ? s.title : s.title.display,
       website: _.isString(s.title) ? undefined : s.title.link,
-      summary: removeMd(s.description),
+      summary: s.description ? removeMd(s.description) : undefined,
       highlights: s.highlights ? s.highlights.map(h => removeMd(h)) : undefined,
     };
 
     if (s.subtitle && !_.isString(s.subtitle)) {
       educationInfo = {
         ...educationInfo,
-        area: s.subtitle.description,
         startDate: s.subtitle.startDate,
         endDate: s.subtitle.endDate,
         area: s.subtitle.area,
@@ -133,39 +87,16 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
     // causes jsonresume.org to throw errors
     // $schema: 'http://json.schemastore.org/resume',
     basics: {
-      name: _.isString(data.title)
-        ? data.title
-        : data.title.map(c => (_.isString(c) ? c : c.character)).join(''),
-      label: data.label,
-      summary: data.summary,
-      picture: `https://secure.gravatar.com/avatar/${md5(
-        email,
-      )}?s=800&d=robohash`,
-      email,
-      website,
-      location: {
-        city: locationData.city,
-        countryCode: locationData.countryCode,
-        region: locationData.region,
-      },
-      profiles: [
-        gitLabProfile,
-        gitHubProfile,
-        linkedInProfile,
-        stackOverflowProfile,
-        twitterProfile,
-      ],
+      ...data.basics,
+
+      // remove nameKerned
+      nameKerned: undefined,
     },
     work,
     education,
     skills,
     meta: data.meta,
   };
-
-  const stringifiedResumeJson = JSON.stringify(resumeJson, null, 2);
-
-  console.log('Transformed resume data into the following resume.json format:');
-  console.log(stringifiedResumeJson);
 
   console.log('Validating JSON...');
   const errors = await validateResumeJson(resumeJson);
@@ -175,6 +106,11 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
     console.log('Resume.json is not valid! ❌');
     console.log(errors);
   }
+
+  const stringifiedResumeJson = JSON.stringify(resumeJson, null, 2);
+
+  console.log('Transformed resume data into the following resume.json format:');
+  console.log(stringifiedResumeJson);
 
   if (githubPat) {
     const gistId = '36d83b1526df75a663d9c3ad0b1cd630';
@@ -233,19 +169,12 @@ async function validateResumeJson(resumeJson) {
     extendRefs: true,
     unknownFormats: 'ignore',
     missingRefs: 'ignore',
+
+    // removes any properties that aren't in the schema
+    removeAdditional: true,
   });
 
-  // No require() in .mjs files :(
-  const metaSchema = JSON.parse(
-    fs.readFileSync(
-      path.resolve(
-        __dirname,
-        '../node_modules/ajv/lib/refs/json-schema-draft-04.json',
-      ),
-    ),
-  );
-
-  ajv.addMetaSchema(metaSchema);
+  ajv.addMetaSchema(require('ajv/lib/refs/json-schema-draft-04.json'));
 
   const validate = await ajv.compile(schema);
   validate(resumeJson);
