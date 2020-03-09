@@ -41,8 +41,8 @@ export default {
     this.deployedTimestamp = moment(process.env.gitlabCi.timestamp)
       .utc()
       .format('Y/MM/DD \\a\\t HH:mm:ss z');
-    this.commitLink = `${process.env.gitlabCi.projectUrl}/commit/${this.commitSha}`;
     this.commitSha = process.env.gitlabCi.commitSha;
+    this.commitLink = `${process.env.gitlabCi.projectUrl}/commit/${this.commitSha}`;
 
     setInterval(this.refreshPipelineStatus, 5000);
     this.refreshPipelineStatus();
