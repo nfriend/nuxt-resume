@@ -18,7 +18,7 @@
       <Header />
       <Content class="flex-grow" />
     </div>
-    <DeploymentInfo class="mb-10" />
+    <DeploymentInfo class="mb-10 px-8" />
   </div>
 </template>
 

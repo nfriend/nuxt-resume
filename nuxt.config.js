@@ -135,8 +135,8 @@ const config = {
       commitSha: process.env.CI_COMMIT_SHORT_SHA,
     },
 
-    // comment above and uncomment below
-    // to simulate production environment
+    // // comment above and uncomment below
+    // // to simulate production environment
     // isProduction: true,
     // gitlabCi: {
     //   timestamp: new Date().toISOString(),
