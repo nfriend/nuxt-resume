@@ -17,25 +17,16 @@ PDF](https://resume.nathanfriend.io/Nathan%20Friend%20-%20R%C3%A9sum%C3%A9.pdf))
 ## Data
 
 All of the content of this resume is sourced from
-[`resume-data.mjs`](./resume-data.mjs).
+[`resume-data.json`](./resume-data.json). This file loosely adheres to the
+[`resume.json` schema](https://jsonresume.org/schema/) (with some additional
+properties for display purposes). See the [resume.json](#resume.json) section
+below for more info about `resume.json` compatibility.
 
-Additionally, a `resume-data.private.mjs` file can be created alongside
-[`resume-data.mjs`](./resume-data.mjs). This file it `.gitignore`-ed; its
-contents will be `require`'d in [`resume-data.mjs`](./resume-data.mjs) when
+Additionally, a `resume-data.private.json` file can be created alongside
+[`resume-data.json`](./resume-data.json). This file it `.gitignore`-ed; its
+contents will be merged into [`resume-data.json`](./resume-data.json) when
 building this résumé. This is used to protect personal info such as phone
 numbers and addresses.
-
-At the moment, the only data point stored inside this file is my phone number.
-
-This file should look something like this:
-
-```js
-export const phoneInfo = {
-  type: 'phone',
-  display: '123.456.7890',
-  link: 'tel:123-456-7890',
-};
-```
 
 ## Inspiration
 
