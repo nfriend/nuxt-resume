@@ -27,6 +27,7 @@ build:
   stage: prepare
   script:
     - yarn run generate
+    - yarn run strip-scripts
   artifacts:
     paths:
       - dist/
@@ -37,7 +38,7 @@ pdf:
     - build
   image:
     name: zenika/alpine-chrome:latest
-    entrypoint: [""]
+    entrypoint: ['']
   before_script: []
   script:
     - ci/generate-pdf.sh
@@ -62,14 +63,14 @@ resume.json:
   stage: render
   needs: []
   script:
-    - yarn resume.json --github-pat ${GITHUB_PAT} --gitlab-pat ${GITLAB_PAT}
+    - yarn run resume.json --github-pat ${GITHUB_PAT} --gitlab-pat ${GITLAB_PAT}
   except:
     - schedules
 
 scheduled resume.json:
   stage: render
   script:
-    - yarn resume.json
+    - yarn run resume.json
   only:
     - schedules
 
