@@ -49,7 +49,7 @@
 
 <script>
 import Icon from '../utility/Icon';
-import * as utils from './contact-info-util';
+import * as helpers from './contact-info-helper';
 
 export default {
   components: { Icon },
@@ -60,24 +60,24 @@ export default {
     // in the file is ignored.
     contactInfo() {
       const info = [
-        utils.getEmailInfo(this.resumeData),
-        utils.getLocationInfo(this.resumeData),
+        helpers.getEmailInfo(this.resumeData),
+        helpers.getLocationInfo(this.resumeData),
       ];
 
       // If we don't have phone information, add LinkedIn info instead. This is
       // because the contact section looks too empty with less than 5 items.
       // (This is rather specific to my personal resume.json.)
-      const phoneInfo = utils.getPhoneInfo(this.resumeData);
-      const linkedInInfo = utils.getLinkedInInfo(this.resumeData);
+      const phoneInfo = helpers.getPhoneInfo(this.resumeData);
+      const linkedInInfo = helpers.getLinkedInInfo(this.resumeData);
       if (phoneInfo) {
         info.push(phoneInfo);
       } else if (linkedInInfo) {
         info.push(linkedInInfo);
       }
 
-      info.push(utils.getWebsiteInfo(this.resumeData));
+      info.push(helpers.getWebsiteInfo(this.resumeData));
 
-      const gitLabPlusGitHubInfo = utils.getGitLabPlusGitHubInfo(
+      const gitLabPlusGitHubInfo = helpers.getGitLabPlusGitHubInfo(
         this.resumeData,
       );
 
@@ -89,8 +89,8 @@ export default {
         info.push(gitLabPlusGitHubInfo);
       } else {
         info.push(
-          utils.getGitLabInfo(this.resumeData),
-          utils.getGitHubInfo(this.resumeData),
+          helpers.getGitLabInfo(this.resumeData),
+          helpers.getGitHubInfo(this.resumeData),
         );
       }
 
