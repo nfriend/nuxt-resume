@@ -90,6 +90,19 @@ const config = {
         color: '#5bbad5',
       },
     ],
+    script: [
+      {
+        src: 'google-analytics-setup.js',
+        body: true,
+        class: 'do-not-strip',
+      },
+      {
+        src: 'https://www.google-analytics.com/analytics.js',
+        async: true,
+        body: true,
+        class: 'do-not-strip',
+      },
+    ],
   },
   /*
    ** Customize the progress-bar color
@@ -111,8 +124,6 @@ const config = {
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
-    // Doc: https://github.com/nuxt-community/analytics-module
-    ['@nuxtjs/google-analytics', { id: 'UA-36351579-3' }],
   ],
   /*
    ** Nuxt.js modules
