@@ -8,23 +8,23 @@ default:
       - node_modules/
 
 stages:
-  - test lint build
+  - prepare
   - render
-  - lint html
+  - verify
   - deploy
 
 test:
-  stage: test lint build
+  stage: prepare
   script:
     - yarn run test
 
 lint:
-  stage: test lint build
+  stage: prepare
   script:
     - yarn run lint
 
 build:
-  stage: test lint build
+  stage: prepare
   script:
     - yarn run generate
   artifacts:
@@ -74,7 +74,7 @@ scheduled resume.json:
     - schedules
 
 html proofer:
-  stage: lint html
+  stage: verify
   needs:
     - pdf
   image: ruby:2.7
