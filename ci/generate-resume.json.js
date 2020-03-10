@@ -8,7 +8,9 @@ const yargs = require('yargs');
 const Ajv = require('ajv');
 const removeMd = require('remove-markdown');
 
-const data = require(path.resolve(__dirname, '../resume-data.json'));
+const resumeJson = _.cloneDeep(
+  require(path.resolve(__dirname, '../resume-data.json')),
+);
 
 (async () => {
   const { githubPat, gitlabPat } = yargs
@@ -26,77 +28,23 @@ const data = require(path.resolve(__dirname, '../resume-data.json'));
       'A GitLab PAT with "api" scope. If not provided, the Snippet will not be updated.',
     ).argv;
 
-  const experienceSection = findSection('Experience');
-  const internshipsSection = findSection('Internships/Part-time');
-  const workSubsections = [
-    ...experienceSection.subsections,
-    ...internshipsSection.subsections,
-  ];
-  const work = workSubsections.map(s => {
-    let workInfo = {
-      company: _.isString(s.title) ? s.title : s.title.display,
-      website: _.isString(s.title) ? undefined : s.title.link,
-      summary: removeMd(s.description),
-      highlights: s.highlights ? s.highlights.map(h => removeMd(h)) : undefined,
-    };
+  console.log('Transforming resume-data.json into a valid resume.json file...');
+  delete resumeJson.basics.nameKerned;
 
-    if (s.subtitle && !_.isString(s.subtitle)) {
-      workInfo = {
-        ...workInfo,
-        position: s.subtitle.description,
-        startDate: s.subtitle.startDate,
-        endDate: s.subtitle.endDate,
-      };
-    }
+  resumeJson.work = resumeJson.work.map(w => ({
+    ...w,
+    tags: undefined,
+    type: undefined,
+    summary: removeMd(w.summary),
+    highlights: w.highlights ? w.highlights.map(h => removeMd(h)) : undefined,
+  }));
 
-    return workInfo;
-  });
-
-  const educationSection = findSection('Education');
-  const education = educationSection.subsections.map(s => {
-    let educationInfo = {
-      institution: _.isString(s.title) ? s.title : s.title.display,
-      website: _.isString(s.title) ? undefined : s.title.link,
-      summary: s.description ? removeMd(s.description) : undefined,
-      highlights: s.highlights ? s.highlights.map(h => removeMd(h)) : undefined,
-    };
-
-    if (s.subtitle && !_.isString(s.subtitle)) {
-      educationInfo = {
-        ...educationInfo,
-        startDate: s.subtitle.startDate,
-        endDate: s.subtitle.endDate,
-        area: s.subtitle.area,
-        studyType: s.subtitle.studyType,
-      };
-    }
-
-    return educationInfo;
-  });
-
-  const skillsSection = findSection('Skills');
-  const skills = skillsSection.subsections
-    .filter(s => ['Languages', 'Frameworks', 'Concepts'].includes(s.title))
-    .map(s => ({
-      name: s.title,
-      keywords: s.tags.map(t => (_.isString(t) ? t : t.display)),
-    }));
-
-  const resumeJson = {
-    // Strangely, including the $schema property
-    // causes jsonresume.org to throw errors
-    // $schema: 'http://json.schemastore.org/resume',
-    basics: {
-      ...data.basics,
-
-      // remove nameKerned
-      nameKerned: undefined,
-    },
-    work,
-    education,
-    skills,
-    meta: data.meta,
-  };
+  resumeJson.skills = resumeJson.skills.map(s => ({
+    ...s,
+    keywords: s.keywords
+      ? s.keywords.map(k => (_.isString(k) ? k : k.display))
+      : undefined,
+  }));
 
   console.log('Validating JSON...');
   const errors = await validateResumeJson(resumeJson);
@@ -138,16 +86,6 @@ const data = require(path.resolve(__dirname, '../resume-data.json'));
     );
   }
 })();
-
-/**
- * Finds a section by title
- * @param sectionTitle The title of the section to find
- */
-function findSection(sectionTitle) {
-  return _.flatten(data.content.columns.map(c => c.sections)).find(
-    s => s.title === sectionTitle,
-  );
-}
 
 /**
  * Validates the resume.json adheres to the JSON schema

@@ -1,6 +1,6 @@
 <template>
   <div class="flex mt-4 flex-col md:flex-row print:flex-row">
-    <template v-for="(column, columnIndex) in resumeData.content.columns">
+    <template v-for="(column, columnIndex) in columns">
       <div class="flex-1">
         <section
           v-for="(section, sectionIndex) in column.sections"
@@ -12,42 +12,20 @@
 
           <section v-for="subsection in section.subsections" class="mb-6">
             <h3 v-if="subsection.title" class="font-bold text-lg">
-              <a
-                v-if="isString(subsection.title.link)"
-                :href="subsection.title.link"
-              >
-                {{ subsection.title.display }}
+              <a v-if="subsection.website" :href="subsection.website">
+                {{ subsection.title }}
               </a>
               <span v-else>
-                {{ subsection.title.display || subsection.title }}
+                {{ subsection.title }}
               </span>
             </h3>
             <h4 v-if="subsection.subtitle" class="text-gray-700 mb-2">
-              <template v-if="isString(subsection.subtitle)">
-                {{ subsection.subtitle }}
-              </template>
-              <template v-else>
-                {{
-                  formatDate(
-                    subsection.subtitle.startDate,
-                    subsection.subtitle.dateFormat,
-                  )
-                }}
-                –
-                {{
-                  formatDate(
-                    subsection.subtitle.endDate,
-                    subsection.subtitle.dateFormat,
-                  )
-                }}
-                |
-                {{ subsection.subtitle.description }}
-              </template>
+              {{ subsection.subtitle }}
             </h4>
             <div
-              v-if="subsection.description"
+              v-if="subsection.summary"
               class="mb-2"
-              v-html="showdown(subsection.description)"
+              v-html="showdown(subsection.summary)"
             ></div>
             <ul v-if="subsection.highlights && subsection.highlights.length">
               <li
@@ -69,7 +47,7 @@
               <Tag
                 v-for="(tag, tagIndex) in subsection.tags"
                 :key="tagIndex"
-                :link="isString(tag.link) ? tag.link : undefined"
+                :website="tag.website"
               >
                 {{ tag.display || tag }}
               </Tag>
@@ -80,7 +58,7 @@
 
       <!-- Column spacer -->
       <div
-        v-if="columnIndex !== resumeData.content.columns.length - 1"
+        v-if="columnIndex !== columns.length - 1"
         class="flex-shrink w-8"
       ></div>
     </template>
@@ -88,25 +66,53 @@
 </template>
 
 <script>
-import moment from 'moment';
 import { isString } from 'lodash';
 import { Converter as ShowdownConverter } from 'showdown';
 import Tag from './Tag';
 import Icon from './utility/Icon';
+import * as helpers from './content-helper';
 
 const showdown = new ShowdownConverter();
 
 export default {
   components: { Tag, Icon },
+  computed: {
+    columns() {
+      return [
+        // column 1 contains work info
+        {
+          sections: [
+            {
+              title: 'Experience',
+              subsections: helpers.getProfessionalWorkInfo(this.resumeData),
+            },
+          ],
+        },
+
+        // column 2 contains education, skills,
+        // and part-time/internship info
+        {
+          sections: [
+            {
+              title: 'Education',
+              subsections: helpers.getEducationInfo(this.resumeData),
+            },
+            {
+              title: 'Skills',
+              subsections: helpers.getSkillsInfo(this.resumeData),
+            },
+            {
+              title: 'Internships/Part-time',
+              subsections: helpers.getOtherWorkInfo(this.resumeData),
+            },
+          ],
+        },
+      ];
+    },
+  },
   methods: {
     isString,
-    formatDate(dateString, format = 'MMM YYYY') {
-      if (!dateString) {
-        return 'Present';
-      }
 
-      return moment(dateString).format(format);
-    },
     showdown(markdown) {
       return showdown.makeHtml(markdown);
     },
