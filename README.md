@@ -75,6 +75,18 @@ Once these prerequisites have been completed, running `yarn html-lint` will run
 `*.html`. This is particularly useful for validating that all external links are
 still valid.
 
+### Static generation
+
+During deployment, all Nuxt-related `<script>` elements are stripped from the
+compiled HTML. This is accomplished by the `yarn strip-scripts` command, which
+calls [`ci/strip-script-elements.js`](ci/strip-script-elements.js). This works
+because this application is fully rendered at build time and requires no
+client-side hydration.
+
+Stripping these `<script>` elements allows the end result to be truly static (no
+JavaScript required), which isn't ([yet](ci/strip-script-elements.js`))
+supported by Nuxt.
+
 ### More info
 
 For detailed explanation on how things work, check out [Nuxt.js
