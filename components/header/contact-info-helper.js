@@ -56,7 +56,7 @@ export const getLocationInfo = resumeData => {
   if (location) {
     const locationInfo = {
       type: 'location',
-      display: [location.city, location.region].join(', '),
+      display: [location.city, location.region].filter(l => l).join(', '),
     };
 
     if (location.city && location.region) {
