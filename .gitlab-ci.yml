@@ -33,9 +33,11 @@ build:
 
 pdf:
   stage: render
+  needs:
+    - build
   image:
     name: zenika/alpine-chrome:latest
-    entrypoint: ['']
+    entrypoint: [""]
   before_script: []
   script:
     - ci/generate-pdf.sh
@@ -45,6 +47,8 @@ pdf:
 
 screenshot:
   stage: render
+  needs:
+    - build
   image:
     name: alekzonder/puppeteer:latest
   before_script: []
@@ -56,6 +60,7 @@ screenshot:
 
 resume.json:
   stage: render
+  needs: []
   script:
     - yarn resume.json --github-pat ${GITHUB_PAT} --gitlab-pat ${GITLAB_PAT}
   except:
@@ -70,6 +75,8 @@ scheduled resume.json:
 
 html proofer:
   stage: lint html
+  needs:
+    - pdf
   image: ruby:2.7
   variables:
     LANG: C.UTF-8
