@@ -38,7 +38,7 @@ pdf:
     - build
   image:
     name: zenika/alpine-chrome:latest
-    entrypoint: ['']
+    entrypoint: [""]
   before_script: []
   script:
     - ci/generate-pdf.sh
@@ -59,20 +59,21 @@ screenshot:
     paths:
       - dist/screenshot.png
 
-resume.json:
+update resume.json:
   stage: render
   needs: []
   script:
     - yarn run resume.json --github-pat ${GITHUB_PAT} --gitlab-pat ${GITLAB_PAT}
-  except:
-    - schedules
+  rules:
+    - if: $CI_COMMIT_BRANCH == "master" && $CI_PIPELINE_SOURCE != "schedule"
 
-scheduled resume.json:
+lint resume.json:
   stage: render
   script:
     - yarn run resume.json
-  only:
-    - schedules
+  rules:
+    - if: $CI_COMMIT_BRANCH != "master"
+    - if: $CI_PIPELINE_SOURCE == "schedule"
 
 html proofer:
   stage: verify
