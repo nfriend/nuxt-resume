@@ -14,13 +14,22 @@
         v-if="item.type === 'gitlab+github'"
         class="flex items-center whitespace-no-wrap mr-6 lg:mr-0 print:mr-0 mb-2 sm:mb-0"
       >
-        <a :href="item.links.gitlab">
+        <a
+          :href="item.links.gitlab"
+          :aria-label="`${item.display}'s GitLab profile`"
+        >
           <Icon type="gitlab" class="mr-1" />
         </a>
-        <a :href="item.links.github">
+        <a
+          :href="item.links.github"
+          :aria-label="`${item.display}'s GitHub profile`"
+        >
           <Icon type="github" class="mr-1" />
         </a>
-        <a :href="item.links.gitlab">
+        <a
+          :href="item.links.gitlab"
+          :aria-label="`${item.display}'s GitLab profile`"
+        >
           {{ item.display }}
         </a>
       </span>
@@ -40,6 +49,7 @@
       <span
         v-if="index !== contactInfo.length - 1"
         class="text-gray-600 mx-4 hidden lg:inline print:inline"
+        aria-hidden="true"
       >
         /
       </span>

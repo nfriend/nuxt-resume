@@ -7,6 +7,9 @@ const config = {
    ** Headers of the page
    */
   head: {
+    htmlAttrs: {
+      lang: 'en',
+    },
     title: 'Nathan Friend - Résumé',
     meta: [
       { charset: 'utf-8' },

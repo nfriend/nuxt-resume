@@ -11,26 +11,21 @@ body {
 }
 
 a:not(.btn):not(.tag) {
-  @apply text-blue-500;
+  @apply text-blue-700;
 
   &:hover {
-    @apply text-blue-600
-           underline;
+    @apply underline;
   }
 
   &:active {
-    @apply text-blue-700;
+    @apply text-blue-800;
   }
 
   &:visited {
-    @apply text-purple-500;
-
-    &:hover {
-      @apply text-purple-600;
-    }
+    @apply text-purple-700;
 
     &:active {
-      @apply text-purple-700;
+      @apply text-purple-800;
     }
   }
 }
@@ -38,7 +33,7 @@ a:not(.btn):not(.tag) {
 h1 {
   @apply text-7xl
          font-light
-         text-blue-700
+         text-blue-600
          tracking-tighter
          leading-none
          pb-4;
