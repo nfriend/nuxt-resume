@@ -101,7 +101,5 @@ pages:
   artifacts:
     paths:
       - public
-  only:
-    - master
-  except:
-    - schedules
+  rules:
+    - if: $CI_COMMIT_BRANCH == "master" && $CI_PIPELINE_SOURCE != "schedule"
