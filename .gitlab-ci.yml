@@ -7,6 +7,10 @@ default:
     paths:
       - node_modules/
 
+workflow:
+  rules:
+    - if: true
+
 stages:
   - prepare
   - render
