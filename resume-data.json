@@ -124,7 +124,7 @@
         },
         {
           "display": "Node",
-          "website": "https://sass-lang.com/"
+          "website": "https://nodejs.org/"
         },
         {
           "display": "ASP.NET",
@@ -229,7 +229,7 @@
       "tags": [
         {
           "display": "JavaScript",
-          "website": "https://vuejs.org/"
+          "website": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
         },
         {
           "display": "jQuery",
@@ -246,7 +246,7 @@
       ]
     },
     {
-      "company": "SnupNow, LLC",
+      "company": "SnupNow",
       "summary": "",
       "position": "Web Development Intern",
       "startDate": "2011-04-15",
@@ -268,7 +268,7 @@
     {
       "institution": "Iowa State University",
       "website": "https://www.iastate.edu/",
-      "startDate": "2016-08-01",
+      "startDate": "2015-08-01",
       "endDate": "2019-08-15",
       "area": "Human-Computer Interaction",
       "studyType": "Master"
