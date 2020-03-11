@@ -9,7 +9,7 @@ default:
 
 workflow:
   rules:
-    - if: true
+    - when: always
 
 stages:
   - prepare
