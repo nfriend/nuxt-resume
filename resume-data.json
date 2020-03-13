@@ -20,7 +20,7 @@
     "picture": "https://secure.gravatar.com/avatar/cd23f74a33fc7d8dfe081948696551a5?s=800&d=robohash",
     "email": "hello@nathanfriend.io",
     "website": "https://nathanfriend.io",
-    "summary": "Senior Frontend Engineer at GitLab and cellist based out of Woodstock, Ontario. Fascinated with building usable, delightful software.",
+    "summary": "Senior Frontend Engineer at GitLab and cellist based out of Woodstock, Ontario. Fascinated with building usable, delightful software. Remote work advocate.",
     "location": {
       "city": "Woodstock",
       "countryCode": "CA",
@@ -64,7 +64,8 @@
         "Implemented high-profile features such as [Let's Encrypt integration](https://docs.gitlab.com/omnibus/settings/ssl.html#lets-encrypt-integration), [merge trains](https://docs.gitlab.com/ee/ci/merge_request_pipelines/pipelines_for_merged_results/merge_trains/), and [deploy freezes](https://gitlab.com/gitlab-org/gitlab/issues/24295)",
         "Pushed Release vision forward through in-depth technical and business analysis",
         "Performed technical interviews",
-        "Reviewed and guided community contributions"
+        "Reviewed and guided community contributions",
+        "Worked 100% remotely"
       ],
       "position": "Senior Frontend Engineer",
       "startDate": "2018-12-10",
