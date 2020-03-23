@@ -5,6 +5,7 @@
            w-full paper:w-paper print:w-print
            transform xl:scale-120 2xl:scale-10 3xl:scale-160 origin-top"
   >
+    <OldBrowserWarning class="mt-4 mb-0 paper:-mb-16 mx-4 paper:mx-0" />
     <div
       class="paper-page
            flex flex-col
@@ -23,15 +24,17 @@
 </template>
 
 <script>
-import Content from './Content';
+import Content from '~/components/Content.vue';
 import Header from '~/components/header/Header.vue';
 import DeploymentInfo from '~/components/DeploymentInfo.vue';
+import OldBrowserWarning from '~/components/OldBrowserWarning.vue';
 
 export default {
   components: {
     Header,
     DeploymentInfo,
     Content,
+    OldBrowserWarning,
   },
   created() {
     this.isProduction = process.env.isProduction;
