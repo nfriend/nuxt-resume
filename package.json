@@ -38,7 +38,7 @@
     "eslint-config-prettier": "6.10.1",
     "eslint-plugin-nuxt": "0.5.2",
     "eslint-plugin-prettier": "3.1.2",
-    "jest": "25.2.6",
+    "jest": "25.2.7",
     "md5": "2.2.1",
     "prettier": "1.19.1",
     "remove-markdown": "0.3.0",
