@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "lodash": "4.17.15",
-    "moment": "2.25.1",
+    "moment": "2.25.2",
     "nuxt": "2.12.2",
     "showdown": "1.9.1"
   },
