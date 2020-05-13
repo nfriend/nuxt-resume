@@ -100,8 +100,8 @@ because this application is fully rendered at build time and requires no
 client-side hydration.
 
 Stripping these `<script>` elements allows the end result to be truly static (no
-JavaScript required), which isn't ([yet](ci/strip-script-elements.js`))
-supported by Nuxt.
+JavaScript required), which isn't
+([yet](https://github.com/nuxt/rfcs/issues/22)) supported by Nuxt.
 
 ### More info
 
