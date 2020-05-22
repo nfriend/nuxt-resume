@@ -4,6 +4,5 @@
     ":automergeMinor",
     ":githubComToken(ZSu6NAKj7YHgIttHSodFG9LjFq795NdQnnWIOe58hfEU5B7PjvBFoa8P7GQnXsaKj+YhGu/EMoqeisPWl90UyGYphWm9U8StZ0tPrYcKv3EdBOQZakSk0pD7fVcjBoewaxit1/6rZdhzIYWtKbCGva5rbYnat1pmbHKkWKFivqRTnZ0YPK1jhft8sMZD/Po0n9lMtN+JbjvqQ4vJDkGolkGuV/cvj5YOrCEoYwA8NuDW+PzekzaoVLWLB6DrFbHE6NcGS+bwUTMDFZQ6kK225vk9GlXDBLIDbQ28SKCpXGyllhbtaFxboMw807CZ9ahOilsscsy+s1MowGU9JiTFzw==)"
   ],
-  "labels": ["renovate", "dependencies"],
-  "assignees": ["nfriend"]
+  "labels": ["renovate", "dependencies"]
 }
