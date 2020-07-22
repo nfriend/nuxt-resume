@@ -28,7 +28,7 @@
     "@nuxtjs/eslint-config": "3.0.0",
     "@nuxtjs/eslint-module": "2.0.0",
     "@nuxtjs/tailwindcss": "2.1.0",
-    "@types/lodash": "4.14.157",
+    "@types/lodash": "4.14.158",
     "@vue/test-utils": "1.0.3",
     "ajv": "6.12.3",
     "babel-eslint": "10.1.0",
