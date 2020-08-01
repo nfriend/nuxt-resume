@@ -44,7 +44,7 @@
     "remove-markdown": "0.3.0",
     "request": "2.88.2",
     "request-promise": "4.2.6",
-    "vue-jest": "4.0.0-beta.4",
+    "vue-jest": "4.0.0-beta.5",
     "yargs": "15.4.1"
   }
 }
