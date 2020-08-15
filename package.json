@@ -30,7 +30,7 @@
     "@nuxtjs/tailwindcss": "2.1.1",
     "@types/lodash": "4.14.159",
     "@vue/test-utils": "1.0.3",
-    "ajv": "6.12.3",
+    "ajv": "6.12.4",
     "babel-eslint": "10.1.0",
     "babel-jest": "25.4.0",
     "cheerio": "1.0.0-rc.3",
