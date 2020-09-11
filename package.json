@@ -29,7 +29,7 @@
     "@nuxtjs/eslint-module": "2.0.0",
     "@nuxtjs/tailwindcss": "2.1.1",
     "@types/lodash": "4.14.161",
-    "@vue/test-utils": "1.0.5",
+    "@vue/test-utils": "1.1.0",
     "ajv": "6.12.4",
     "babel-eslint": "10.1.0",
     "babel-jest": "25.4.0",
@@ -44,7 +44,7 @@
     "remove-markdown": "0.3.0",
     "request": "2.88.2",
     "request-promise": "4.2.6",
-    "vue-jest": "4.0.0-beta.5",
+    "vue-jest": "4.0.0-beta.6",
     "yargs": "15.4.1"
   }
 }
