@@ -61,10 +61,11 @@
       "website": "https://about.gitlab.com",
       "summary": "I build features that help people release software more quickly, easily, and effectively.",
       "highlights": [
-        "Implemented high-profile features such as [Let's Encrypt integration](https://docs.gitlab.com/omnibus/settings/ssl.html#lets-encrypt-integration), [merge trains](https://docs.gitlab.com/ee/ci/merge_request_pipelines/pipelines_for_merged_results/merge_trains/), and [deploy freezes](https://gitlab.com/gitlab-org/gitlab/issues/24295)",
+        "Implemented high-profile features such as [Let's Encrypt integration](https://docs.gitlab.com/omnibus/settings/ssl.html#lets-encrypt-integration), [merge trains](https://docs.gitlab.com/ee/ci/merge_request_pipelines/pipelines_for_merged_results/merge_trains/), [deploy freezes](https://docs.gitlab.com/ee/user/project/releases/index.html#prevent-unintentional-releases-by-setting-a-deploy-freeze), [DORA 4 metrics](https://about.gitlab.com/releases/2021/01/22/gitlab-13-8-released/#improve-your-devops-maturity-with-deployment-frequency-metrics), and [markdown editor keyboard shortcuts](https://gitlab.com/gitlab-org/gitlab/-/merge_requests/40328)",
         "Pushed Release vision forward through in-depth technical and business analysis",
-        "Performed technical interviews",
         "Reviewed and guided community contributions",
+        "Maintainer of [gitlab-org/gitlab](https://gitlab.com/gitlab-org/gitlab/)",
+        "Performed technical and behavioral interviews",
         "Worked 100% remotely"
       ],
       "position": "Senior Frontend Engineer",
@@ -93,6 +94,10 @@
         {
           "display": "Rails",
           "website": "https://rubyonrails.org/"
+        },
+        {
+          "display": "GraphQL",
+          "website": "https://graphql.org/"
         }
       ]
     },
@@ -103,9 +108,8 @@
       "highlights": [
         "Led AngularJS to Angular 2+ conversion",
         "Implemented fast, intuitive searching using Solr",
-        "Assisted in hiring and mentoring",
-        "Pushed for best practices such as continuous integration (CI), code reviews, UX/UI mockups, open source participation, and documentation",
-        "Worked directly with clients to capture requirements"
+        "Pushed for CI, code reviews, UX/UI mockups, open source participation, and documentation",
+        "Contributed to hiring, mentoring, and product vision"
       ],
       "position": "Project Architect",
       "startDate": "2016-08-03",
@@ -296,6 +300,10 @@
           "website": "https://www.typescriptlang.org/"
         },
         {
+          "display": "Dart",
+          "website": "https://dart.dev/"
+        },
+        {
           "display": "C♯",
           "website": "https://en.wikipedia.org/wiki/C_Sharp_(programming_language)"
         },
@@ -329,16 +337,20 @@
           "website": "https://reactjs.org/"
         },
         {
+          "display": "Flutter",
+          "website": "https://flutter.dev/"
+        },
+        {
+          "display": "Rails",
+          "website": "https://rubyonrails.org/"
+        },
+        {
           "display": "ASP.NET",
           "website": "https://www.asp.net/"
         },
         {
           "display": "WPF",
           "website": "https://en.wikipedia.org/wiki/Windows_Presentation_Foundation"
-        },
-        {
-          "display": "Rails",
-          "website": "https://rubyonrails.org/"
         }
       ]
     },
@@ -347,7 +359,7 @@
       "keywords": [
         "Continuous integration/deployment (CI/CD)",
         "Automated testing",
-        "REST API design",
+        "REST/GraphQL API design",
         "Cross-browser debugging",
         "Responsive design",
         "Developer workflow optimization",
