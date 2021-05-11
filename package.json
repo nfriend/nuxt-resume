@@ -18,7 +18,7 @@
     "resume.json": "ci/generate-resume.json.js"
   },
   "dependencies": {
-    "lodash": "4.17.20",
+    "lodash": "4.17.21",
     "moment": "2.29.1",
     "nuxt": "2.12.2",
     "showdown": "1.9.1"
