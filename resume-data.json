@@ -57,9 +57,35 @@
 
   "work": [
     {
+      "company": "Stripe",
+      "website": "https://stripe.com/",
+      "summary": "I build economic infrastructure for the internet.",
+      "highlights": ["Worked 100% remotely on the Connect team"],
+      "position": "Remote Fullstack Engineer",
+      "startDate": "2021-08-23",
+      "tags": [
+        {
+          "display": "React",
+          "website": "https://reactjs.org/"
+        },
+        {
+          "display": "Flow",
+          "website": "https://flow.org/"
+        },
+        {
+          "display": "Ruby",
+          "website": "https://www.ruby-lang.org/"
+        },
+        {
+          "display": "Rails",
+          "website": "https://rubyonrails.org/"
+        }
+      ]
+    },
+    {
       "company": "GitLab",
       "website": "https://about.gitlab.com",
-      "summary": "I build features that help people release software more quickly, easily, and effectively.",
+      "summary": "I built features that help people release software more quickly, easily, and effectively.",
       "highlights": [
         "Implemented high-profile features such as [Let's Encrypt integration](https://docs.gitlab.com/omnibus/settings/ssl.html#lets-encrypt-integration), [merge trains](https://docs.gitlab.com/ee/ci/merge_request_pipelines/pipelines_for_merged_results/merge_trains/), [deploy freezes](https://docs.gitlab.com/ee/user/project/releases/index.html#prevent-unintentional-releases-by-setting-a-deploy-freeze), [DORA 4 metrics](https://about.gitlab.com/releases/2021/01/22/gitlab-13-8-released/#improve-your-devops-maturity-with-deployment-frequency-metrics), and [markdown editor keyboard shortcuts](https://gitlab.com/gitlab-org/gitlab/-/merge_requests/40328)",
         "Pushed Release vision forward through in-depth technical and business analysis",
@@ -70,6 +96,7 @@
       ],
       "position": "Senior Frontend Engineer",
       "startDate": "2018-12-10",
+      "endDate": "2021-08-20",
       "tags": [
         {
           "display": "Vue.js",
@@ -92,24 +119,22 @@
           "website": "https://www.ruby-lang.org/"
         },
         {
-          "display": "Rails",
-          "website": "https://rubyonrails.org/"
-        },
-        {
           "display": "GraphQL",
           "website": "https://graphql.org/"
+        },
+        {
+          "display": "Go",
+          "website": "https://golang.org/"
         }
       ]
     },
     {
       "company": "DeltaWare",
       "website": "https://maximuscanada.ca/locations",
-      "summary": "I led efforts to rebuild legacy healthcare software as modern web applications with an emphasis on maintainability and usability.",
+      "summary": "I led efforts to rebuild legacy healthcare software as modern web applications with an emphasis on usability.",
       "highlights": [
         "Led AngularJS to Angular 2+ conversion",
-        "Implemented fast, intuitive searching using Solr",
-        "Pushed for CI, code reviews, UX/UI mockups, open source participation, and documentation",
-        "Contributed to hiring, mentoring, and product vision"
+        "Implemented fast, intuitive searching using Solr"
       ],
       "position": "Project Architect",
       "startDate": "2016-08-03",
@@ -144,12 +169,10 @@
     {
       "company": "DuPont Pioneer",
       "website": "https://www.pioneer.com/us",
-      "summary": "I designed a modular frontend system that allowed multiple teams to independently build a web application used by farmers to optimize fertilizer usage.",
+      "summary": "I worked on a fertilizer optimization SaaS for farmers.",
       "highlights": [
         "Built mapping features using Leaflet and Bing Maps",
-        "Rebuilt Gulp builds to maximize developer efficiency",
-        "Implemented an automated TypeScript unit testing framework using PhantomJS, Karma, and Jasmine",
-        "Enforced coding standards using NDepend and TSLint"
+        "Rebuilt Gulp builds to maximize developer efficiency"
       ],
       "position": "Software Development Specialist",
       "startDate": "2013-05-20",
